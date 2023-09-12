@@ -42,8 +42,8 @@
 </section> 
     </section>
     <div class="popup" id="popup1">
-      <h1>Error</h1>
-      <p>Du kannst keine weiteren Antworten in diese "Dropzone" packen!.</p>
+      <h1>Verloren</h1>
+      <p>Du die richtige Antwort nicht gefunden!</p>
       <a href="#" onclick="hide('popup1')">Ok!</a>
     </div>
     

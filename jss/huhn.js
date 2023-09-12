@@ -1,6 +1,7 @@
 
 var correct = null;
 var isReset = false;
+
 window.onload = function() {
     generateBirds();
 positionBirds();
@@ -19,6 +20,9 @@ const sleep = (milliseconds) => {
                 element.style.left = 5*reset + "px"; 
                
             }else{
+                if(correct === element){
+                    document.getElementById('popup1').style.display ='block';
+                }
                 element.remove();
             }
           });
@@ -27,6 +31,10 @@ const sleep = (milliseconds) => {
        return true;
     }
 
+    var hide = function(id) {
+        document.getElementById('popup1').style.display ='none';
+      }
+    
 const removeBirds = async () => {
     Array.from(document.getElementsByClassName("bird")).forEach(element => {
         element.remove();
@@ -115,8 +123,6 @@ const removeBirds = async () => {
                 if(bird == correct){
                     removeBirds();
                     generateBirds();
-                }else{
-                    bird.style.color = "red";
                 }
               });
               correct = bird;
