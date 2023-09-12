@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url(colors.css);
+
+*, *::before, *::after {
+      padding:0;
+    margin:0;
+}
+
+
+body{
+  background-image: url('media/background.png');
+  background-size: cover;
+      font-family: 'Roboto', sans-serif;
+
+
+}
+
+main{
+  text-align: center;
+  color: var(--white);
+}
+.br{
+  display: inline-block;
+  height: 15vh;
+}
+.BR-Math-Title h1{
+  margin: 0vh 0% 20vh 0%;
+}
+
+
+main h1{
+  font-size: 7vw;
+  text-decoration: var(--highlight-green) underline .5vh;
+}
+
+.BR-Math-TermZone{
+  margin: 10vh 20% 1vh 20%;
+  padding: 2vh 2vw 14vh 2vw;
+    background-color: var(--lightes-gray);
+    border: 5px none var(--lightes-gray);
+    border-radius: 40px 40px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.BR-Math-DropZone{
+  margin: 1vh 1vw 0 0vw;
+  width: 6vw;
+  height: 7.5vh;
+  z-index: 1;
+  float:left;
+  border: .3vw dashed rgb(191, 195, 201);
+border-radius: .3vw;
+  }
+
+  .BR-Math-PickZone{
+    padding:5vh 2vw 2vh 2vw;
+    margin: 1vh 20% 2vh 20%;
+    background-color: var(--lightes-gray);
+    border: 5px none var(--lightes-gray);
+    border-radius: 0px 0px 40px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.term{
+  }
+
+.term p {
+ font-size: 6vh;
+ z-index: 2;
+ float: left;
+ padding: .5vh 1.5vw .5vh 1.5vw;
+ margin: 0 1vw 0 0;
+ color: var(--gray);
+ background-color: var(--light-gray);
+ border: 5px none var(--light-gray);
+border-radius: 17px;
+}
+
+.BR-Math-DropZone .BR-Math-Variable{
+  margin-left: -0.21vw;
+  margin-top: -1.3vh;
+  z-index: 2;
+}
+
+
+
+.BR-Math-Variable {
+    position: relative;
+    margin: .2vh .5vw .2vh .5vw;
+    float: left;
+    /*margin-left: -2.6vw;*/
+    display: block;
+    width: 6vw;
+    height: 8vh;
+    text-align: center;
+    color: var(--gray);
+    background-color: var(--light-gray);
+    border: .3vw solid var(--dark-gray);
+border-radius: .5vw;
+  }
+.decor-border{
+  width: .5vw;
+  height: 7vh;
+  float: left;
+}
+  .BR-Math-Variable-decor{
+    border: .3vw solid var(--dark-gray);
+    background-color: var(--dark-gray);
+height: 100%;
+  }
+
+  .BR-Math-Variable h1{
+    font-size: 6vh;
+
+    float: center;
+  }

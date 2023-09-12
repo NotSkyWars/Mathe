@@ -1,0 +1,42 @@
+@import url(colors.css);
+
+
+@keyframes fadein{
+    from{
+        opacity: 0;
+    }
+    to{
+opacity: 1;
+    }
+}
+
+body{
+    background: linear-gradient(-45deg, var(--gray), var(--background), var(--background), var(--dark-gray));
+	background-size: 400% 400%;
+	animation: fadein 2s;
+	height: 100vh;
+    overflow: hidden;
+}
+
+main{
+    margin: 6vh 20% 2vh 20%;
+    opacity: 1;
+    text-align: center;
+}
+
+h1{
+    color: white;
+    margin-bottom: 10vh;
+    font-size: 7vw;
+    text-decoration: var(--highlight-green) underline .5vh;
+  }
+
+h2{
+    font-size: 3vw;
+    color: white;
+}
+
+input[type=submit] {
+    padding: 3vh 5vw;
+    background-color: red;
+}

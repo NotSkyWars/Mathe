@@ -1,0 +1,114 @@
+@import url(colors.css);
+
+body{
+    background: linear-gradient(-45deg, var(--gray), var(--background), var(--background), var(--dark-gray));
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes fadein{
+    0%{
+        opacity: 1;
+    }
+    50%{
+opacity: 1;
+    }
+    90%{
+        opacity: 0.5;
+    }
+    100%{
+opacity: 0;
+    }
+}
+
+@keyframes load{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+main{
+    margin: 6vh 20% 2vh 20%;
+    opacity: 0;
+    text-align: center;
+    animation: fadein 13s;
+}
+
+h1{
+    color: white;
+    margin-bottom: 10vh;
+    font-size: 7vw;
+    text-decoration: var(--highlight-green) underline .5vh;
+  }
+
+h2{
+    font-size: 3vw;
+    color: white;
+}
+
+.loading{
+    padding: 1vh 0vh 1vh 0vh;
+    animation: load 10s;
+    background-size: 400% 400%;
+    background: var(--highlight-green);
+    z-index: 1;
+}
+.loadingbar{
+    margin-top: -5vh;
+    margin-bottom: 5vh;
+    width: 100%;
+    padding: .5vh .5vh .5vh .5vh;
+    background-color: rgb(189, 189, 189);
+    z-index: 0;
+    -webkit-box-shadow: inset 1px 0px 50px 12px #000000; 
+box-shadow: inset 1px 0px 50px 12px #000000;
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+    main{
+        margin: 50% 20% 50% 20%;
+    }
+        
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+    main{
+        margin: 50% 20% 50% 20%;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    main{
+        margin: 2vh 20% 2vh 20%;
+    }
+}

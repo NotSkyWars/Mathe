@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --background: rgb(45,47,53);
+    --white: rgb(245,245,245);
+  
+    --lightes-gray: rgb(207,215,220);
+    --light-gray: rgb(163,167,172);
+    --gray:rgb(95,98,102);
+    --dark-gray:rgb(46,48,54);
+  
+    --highlight-green: rgb(61,130,119);
+    --highlight-green2: rgb(72,154,139);
+    --highlight-yellow: rgb(159,118,64);
+    --highlight-yellow2: rgb(200,148,76);
+    --highlight-red: rgb(182,75,73);
+    --highlight-red2: rgb(138,59,59);
+    --background: rgb(45,47,53);
+  }
