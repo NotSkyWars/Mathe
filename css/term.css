@@ -35,27 +35,18 @@ main h1{
 
 .BR-Math-TermZone{
   margin: 10vh 20% 1vh 20%;
-  padding: 2vh 2vw 6vh 2vw;
+  padding: 2vh 2vw 14vh 2vw;
     background-color: var(--lightes-gray);
     border: 5px none var(--lightes-gray);
-    border-radius: 1.5vw 1.5vw 0px 0px;
-    
-}
-.term{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.submit{
-    margin-top: 4vh;
+    border-radius: 40px 40px 0px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .BR-Math-DropZone{
   margin: 1vh 1vw 0 0vw;
-  width: 8vw;
-   height: 10vh;
+  width: 6vw;
+  height: 7.5vh;
   z-index: 1;
   float:left;
   border: .3vw dashed rgb(191, 195, 201);
@@ -67,7 +58,7 @@ border-radius: .3vw;
     margin: 1vh 20% 2vh 20%;
     background-color: var(--lightes-gray);
     border: 5px none var(--lightes-gray);
-    border-radius: 0vw 0vw 1.5vw 1.5vw;
+    border-radius: 0px 0px 40px 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,7 +81,7 @@ border-radius: 17px;
 
 .BR-Math-DropZone .BR-Math-Variable{
   margin-left: -0.21vw;
-  margin-top: -.3vh;
+  margin-top: -1.3vh;
   z-index: 2;
 }
 
@@ -102,8 +93,8 @@ border-radius: 17px;
     float: left;
     /*margin-left: -2.6vw;*/
     display: block;
-    width: 8vw;
-   height: 9.5vh;
+    width: 6vw;
+   height: 8vh;
     text-align: center;
   
     color: var(--gray);
@@ -114,6 +105,7 @@ border-radius: .5vw;
   }
 .decor-border{
   width: .5vw;
+  height: 7vh;
   float: left;
 }
   .BR-Math-Variable-decor{
@@ -160,9 +152,11 @@ height: 100%;
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-    .decor-border{
-        height: 9vh;
-      }
+  .decor-border{
+    height: 7vh;
+  }
+  .BR-Math-Variable {
+  }
   .BR-Math-Variable h1{
     font-size: 3vw;
     display: flex;
@@ -178,12 +172,6 @@ justify-content: center;
     display: flex;
 align-items: center;
 justify-content: center;
-}
-.BR-Math-PickZone{
-    margin: 1vh 5% 2vh 5%;
-}
-.BR-Math-TermZone{
-    margin: 1vh 5% 2vh 5%;
 }
 .BR-Math-Variable h1{
   padding: 0 2vw 0 2vw;

@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Website</title>
     
-    <link rel="stylesheet" href="./css/triade.css">
+    <link rel="stylesheet" href="./css/triade.css?<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/buttons.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/popup.css">
     <link rel="stylesheet" href="./css/navbar.css">
-    <script src="./jss/triade.js"></script> 
+    <script src="./jss/dragndrop.js"></script> 
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <header>
@@ -42,13 +43,19 @@
     </div>
     <section class="BR-Math-TermZone">
         <section class="term">
-          <p>4</p><p>*</p><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><p>-</p><p>12</p><p>=</p> <div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
-        </section> 
+        <div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
+       
+    </section>
+    <div class="submit"><input type="submit" value="Abgeben">  </div>
+    
       </section>
         <section class="BR-Math-PickZone" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-          <div class="BR-Math-Variable" id="0" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag1">8</h1></div>
-          <div class="BR-Math-Variable" id="1" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag2">5</h1></div>  
-          <div class="BR-Math-Variable" id="2" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag3">16</h1></div>
+        <div class="BR-Math-Variable" id="0" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag1">x^2</h1></div>
+          <div class="BR-Math-Variable" id="1" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag2">x=5</h1></div>  
+          <div class="BR-Math-Variable" id="2" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag3">25</h1></div>
+          <div class="BR-Math-Variable" id="0" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag1">x^2</h1></div>
+          <div class="BR-Math-Variable" id="1" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag2">x=5</h1></div>  
+          <div class="BR-Math-Variable" id="2" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag3">25</h1></div>
         </section>
     
   </body>

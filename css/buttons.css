@@ -1,0 +1,11 @@
+@import url('colors.css');
+
+
+input[type=submit] {
+    padding: 1vh 10% 1vh 10%;
+    background-color: var(--highlight-green);
+    border: .3vw solid none;
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+        border-radius: 1.5vw 1.5vw 1.5vw;
+}
