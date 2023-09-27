@@ -81,7 +81,7 @@
   nav {
     position: absolute;
     text-align: left;
-    top: 100%;
+    top: 101%;
     left: 0;
     background: var(--background);
     width: 100%;
@@ -122,6 +122,12 @@
   .nav-toggle:checked ~ nav a {
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
+  }
+
+  @media screen and (max-width:1199px) {
+    nav{
+      top: 107%;
+    }
   }
   @media screen and (min-width:1200px) {
     .nav-toggle-label {

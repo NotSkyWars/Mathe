@@ -8,7 +8,7 @@
     
     <link rel="stylesheet" href="./css/term.css">
     <link rel="stylesheet" href="./css/popup.css">
-    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/navbar.css?<?php echo time(); ?>">
     <script src="./jss/dragndrop.js"></script> 
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
@@ -17,10 +17,10 @@
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <nav>
           <ul>
-            <li><a href="#about">Klassen</a></li>
-            <li><a href="#races">Spielmodi</a></li>
-            <li><a href="#classes">FaQ</a></li>
-            <li><a href="minetravel.net">Abmelden</a></li>
+          <li><a href="klassen">Klassen</a></li>
+            <li><a href="selection">Spielmodi</a></li>
+            <li><a href="faq">FaQ</a></li>
+            <li><a href="abmelden">Abmelden</a></li>
           </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">

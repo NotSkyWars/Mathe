@@ -11,10 +11,13 @@
   <body>
     <main>
         <h1>Mathespiel</h1>
-        <form method="post" action="selection.html">
-        <input type="text" placeholder="username">
-        <input type="password" placeholder="password">
-        <input type="submit" value="Senden">
+        <form method="post" action="selection.php">
+       <div class="login-form"> 
+        <input class="login" type="text" placeholder="username">
+        <input class="login" type="password" placeholder="password">
+      </div>
+      <div class="submit"><input type="submit" value="Senden"></div>
+        
        </form>
     </main>
   </body>

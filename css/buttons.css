@@ -9,3 +9,12 @@ input[type=submit] {
     font-family: 'Roboto', sans-serif;
         border-radius: 1.5vw 1.5vw 1.5vw;
 }
+
+.login{
+    padding: 1vh 10% 1vh 10%;
+    
+    border: .3vw solid none;
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    
+}
