@@ -17,9 +17,9 @@
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <nav>
           <ul>
-            <li><a href="klassen">Klassen</a></li>
-            <li><a href="selection">Spielmodi</a></li>
-            <li><a href="faq">FaQ</a></li>
+            <li><a href="klassen.php">Klassen</a></li>
+            <li><a href="selection.php">Spielmodi</a></li>
+            <li><a href="faq.php">FaQ</a></li>
             <li><a href="abmelden">Abmelden</a></li>
           </ul>
         </nav>
@@ -32,13 +32,12 @@
     <main>
       <span class="br"></span>
       <section class="BR-Math-Title">
-        <h1>Mathespiel</Mathespiel></h1>
+        
       </section>
       <section class="selection">
       <a href="triade.php">Triade</a>
       <a href="term.php">Termspiel</a>
       <a href="moorhuhn.php">Moorhuhn</a>
-      <a href="#about"></a>
       </section>
     </main>
     

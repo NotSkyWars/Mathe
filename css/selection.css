@@ -3,7 +3,7 @@
 
 .br{
     display: inline-block;
-    height: 100vh;
+    height: 50vh;
   }
 body{
     height: 100vh;
@@ -12,9 +12,24 @@ body{
 
 main{
     
+   
+}
+
+.selection{
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1vw;
+
+    margin-top: 0;
+}
+
+.selection a{
+    width: 30%;
 }
 main a{
     padding: 3vh 3vw 3vh 3vw;
@@ -27,3 +42,17 @@ main a{
     font-size: 4vw;
     color: var(--white);
 }
+
+@media only screen and (max-width : 992px) {
+    .selection{
+        flex-direction: column;
+    }
+    .br{
+        height: 40vh;
+    }
+    .selection a{
+        height: 10vh;
+        width: 80%;
+        margin-bottom: 3vw;
+    }
+  }

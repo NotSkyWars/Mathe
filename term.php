@@ -17,9 +17,9 @@
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <nav>
           <ul>
-          <li><a href="klassen">Klassen</a></li>
-            <li><a href="selection">Spielmodi</a></li>
-            <li><a href="faq">FaQ</a></li>
+          <li><a href="klassen.php">Klassen</a></li>
+            <li><a href="selection.php">Spielmodi</a></li>
+            <li><a href="faq.php">FaQ</a></li>
             <li><a href="abmelden">Abmelden</a></li>
           </ul>
         </nav>

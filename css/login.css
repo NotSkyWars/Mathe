@@ -29,6 +29,15 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1vw;
+}
+.login-form input{
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: .2vw solid #1C6EA4;
 }
 .submit{
     margin-top: 3vh;
@@ -50,18 +59,14 @@ h2{
 
 @media only screen and (max-width : 992px) {
     .login-form{
-        display: unset;
-        align-items: unset;
-        justify-content: unset;
-        float: left;
+        flex-direction: column;
     }
 main{
     margin-top: 40vh;
 }
     .submit{
-        margin-right: 10%;
-        display: unset;
-        margin-top: 10vh;
+        
+        flex-direction: column;
     }
   }
 
