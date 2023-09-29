@@ -32,14 +32,13 @@
     <main>
       <span class="br"></span>
       <section class="BR-Math-Title">
-        <h1>Mathespiel</Mathespiel></h1>
+        
       </section>
     </main>
-
-    <section class="game">
+    <section class="score" id="score"> 0</section>
     <section id="term" class="term">
-
 </section> 
+    <section class="game">
     </section>
     <div class="popup" id="popup1">
       <h1>Verloren</h1>

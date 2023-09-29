@@ -3,16 +3,24 @@
 
 .br{
     display: inline-block;
-    height: 50vh;
+    height: 10vw;
   }
 body{
     height: 100vh;
+    background-image: url('media/background.png');
+    background-size: cover;
     font-family: 'Roboto', sans-serif;
 }
-
-main{
-    
-   
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 10vh;
+    font-size: 7vw;
+    text-decoration: var(--highlight-yellow) underline .5vh;
+    margin-bottom: 10vw;
+    transition: .5s;
 }
 
 .selection{
@@ -30,11 +38,12 @@ main{
 
 .selection a{
     width: 30%;
+    transition: .5s;
 }
 main a{
     padding: 3vh 3vw 3vh 3vw;
     text-align: center;
-    background-color: var(--highlight-red) ;
+    background-color: var(--highlight-red2) ;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -43,12 +52,26 @@ main a{
     color: var(--white);
 }
 
+h1:hover{
+    transform: scale(.9);
+    color:var(--highlight-yellow);
+}
+
+.selection a:hover{
+    transform: scale(.9);
+    background-color: var(--highlight-red);
+}
+
+main{
+    animation: fadein 1.5s;
+}
+
 @media only screen and (max-width : 992px) {
     .selection{
         flex-direction: column;
     }
     .br{
-        height: 40vh;
+        height: 30vh;
     }
     .selection a{
         height: 10vh;
@@ -56,3 +79,12 @@ main a{
         margin-bottom: 3vw;
     }
   }
+
+  @keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    100%{
+opacity: 1;
+    }
+}

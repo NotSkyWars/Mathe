@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./css/selection.css">
     <link rel="stylesheet" href="./css/popup.css">
     <link rel="stylesheet" href="./css/navbar.css?<?php echo time(); ?>">
-    <script src="./jss/dragndrop.js"></script> 
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <header>
@@ -32,7 +31,7 @@
     <main>
       <span class="br"></span>
       <section class="BR-Math-Title">
-        
+      <h1>Wähle dein Spiel</h1>
       </section>
       <section class="selection">
       <a href="triade.php">Triade</a>

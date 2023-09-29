@@ -1,8 +1,11 @@
 
 var correct = null;
 var isReset = false;
+var score = 0;
+var times = 0;
 
 window.onload = function() {
+    generateTerm();
     generateBirds();
 positionBirds();
 }
@@ -21,7 +24,7 @@ const sleep = (milliseconds) => {
                
             }else{
                 if(correct === element){
-                    document.getElementById('popup1').style.display ='block';
+                    resetGame();
                 }
                 element.remove();
             }
@@ -33,6 +36,7 @@ const sleep = (milliseconds) => {
 
     var hide = function(id) {
         document.getElementById('popup1').style.display ='none';
+        location.reload();
       }
     
 const removeBirds = async () => {
@@ -45,11 +49,10 @@ const removeBirds = async () => {
 }
 
     const generateBirds = async () => {
-        
-        var stop = randomRange(0,3);
+        var stop = randomRange(3,6);
         var generate = randomRange(0, stop+3);
         console.log(generate +":" + stop);
-        for(var i  = -3; i <stop; i++){
+        for(var i  = 1; i <stop; i++){
                 if(generate-3 == i){generateTerm();}
             const bird = document.createElement("button");
             bird.id = i;
@@ -58,16 +61,14 @@ const removeBirds = async () => {
             bird.style.float = "left";
             bird.style.top = Math.floor(Math.random() * 300) + "px";
             bird.style.marginRight = "-" + Math.floor(Math.random() * 100) + "px" ;
-            bird.innerHTML = Math.floor(Math.random() * Math.floor(Math.random() * 100))
+            //add random results
+            bird.innerHTML = Math.floor(Math.random() * Math.floor(Math.random() * 100) + (times * 10))
             
             bird.addEventListener("click", (event) => {
-                if(bird == correct){
-                    removeBirds();
-                    generateBirds();
-                    
-                }else{
-                    bird.style.color = "red";
-                }
+                console.log("asdasd");
+
+                    resetGame();
+
               });
 
             document.getElementsByClassName("game")[0].appendChild(bird);
@@ -82,8 +83,8 @@ const removeBirds = async () => {
     }
 
     const generateTerm = async () =>{
-        var a = Math.floor(Math.random() * 10);
-        var b = Math.floor(Math.random() * 10);
+        var a = Math.floor(Math.random() * 10 + (times * 10));
+        var b = Math.floor(Math.random() * 10 + (times * 10));
         var term = null;
         var answer = null;
         switch(randomRange(0,4)){
@@ -116,18 +117,35 @@ const removeBirds = async () => {
             bird.className = "bird";
             bird.style.zIndex = 0;
             bird.style.float = "left";
-            bird.style.top = Math.floor(Math.random() * 300) + "px";
+            bird.style.top = Math.floor(Math.random() * 150) + "px";
             bird.style.marginRight = "-" + Math.floor(Math.random() * 100) + "px" ;
             bird.innerHTML = answer;
             bird.addEventListener("click", (event) => {
                 if(bird == correct){
                     removeBirds();
+                    generateTerm();
                     generateBirds();
+                    score++;
+                    switch(score){
+                        case 80:
+                        case 40:
+                        case 20:
+                        case 10:
+                            times++;
+                            break;
+                    }
+                    document.getElementById("score").innerHTML = score;
                 }
               });
               correct = bird;
 
             document.getElementsByClassName("game")[0].appendChild(bird);
+    }
+
+    const resetGame = () =>{
+        document.getElementById('popup1').style.display ='block';
+        removeBirds();
+
     }
 
     const randomRange = (min, max) => Math.floor(Math.random() * (max - min)) + min;

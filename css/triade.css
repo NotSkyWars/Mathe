@@ -182,11 +182,20 @@ justify-content: center;
 .BR-Math-PickZone{
     margin: 1vh 5% 2vh 5%;
 }
+.BR-Math-DropZone{
+  padding: 5vw 6.5vw;
+}
 .BR-Math-TermZone{
     margin: 1vh 5% 2vh 5%;
 }
 .BR-Math-Variable h1{
   padding: 0 2vw 0 2vw;
+}
+
+.BR-Math-DropZone .BR-Math-Variable{
+  margin-left: -3vw;
+  margin-top: -.5vh;
+  z-index: 2;
 }
 }
 

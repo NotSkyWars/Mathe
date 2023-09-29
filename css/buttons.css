@@ -6,13 +6,14 @@ input[type=submit] {
     background-color: var(--highlight-green);
     border: .3vw solid none;
     color: var(--white);
+    border:none;
     font-family: 'Roboto', sans-serif;
         border-radius: 1.5vw 1.5vw 1.5vw;
 }
 
 .login{
     padding: 1vh 10% 1vh 10%;
-    
+    border:none;
     border: .3vw solid none;
     color: var(--white);
     font-family: 'Roboto', sans-serif;
