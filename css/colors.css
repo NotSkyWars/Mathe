@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@font-face{
+  font-family: 'Roboto';
+  font-weight: 300;
+  src: url('fonts/Roboto/roboto-light-webfont.woff') format('woff2'), 
+       url('fonts/Roboto/roboto-light-webfont.woff') format('woff');
+}
 
 :root{
     --background: rgb(45,47,53);

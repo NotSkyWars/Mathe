@@ -37,6 +37,7 @@ main{
     color: white;
     background-color: transparent;
     border: none;
+    font-family: 'Roboto';
     border-bottom: .2vw solid #1C6EA4;
 }
 .submit{
@@ -50,11 +51,13 @@ h1{
     margin-bottom: 10vh;
     font-size: 7vw;
     text-decoration: var(--highlight-green) underline .5vh;
+    font-family: 'Roboto';
   }
 
 h2{
     font-size: 3vw;
     color: white;
+    font-family: 'Roboto';
 }
 
 
