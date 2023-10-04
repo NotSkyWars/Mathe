@@ -7,6 +7,7 @@ input[type=submit] {
     border: .3vw solid none;
     color: var(--white);
     border:none;
+    transition: .2s;
     font-family: 'Roboto', sans-serif;
         border-radius: 1.5vw 1.5vw 1.5vw;
 }
@@ -18,4 +19,9 @@ input[type=submit] {
     color: var(--white);
     font-family: 'Roboto', sans-serif;
     font-family: 'Roboto';
+}
+
+input[type=submit]:hover {
+
+    transform: scale(1.1);
 }

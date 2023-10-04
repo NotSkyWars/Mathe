@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/popup.css">
     <link rel="stylesheet" href="./css/navbar.css?<?php echo time(); ?>">
     <script src="./jss/dragndrop.js"></script> 
+    <script src="./jss/triade.js?<?php echo time(); ?>"></script> 
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <header>
@@ -41,12 +42,12 @@
       <p>Du kannst keine weiteren Antworten in diese "Dropzone" packen!.</p>
       <a href="#" onclick="hide('popup1')">Ok!</a>
     </div>
-    <section class="BR-Math-TermZone">
+    <section class="BR-Math-TermZone" id="BR-Math-TermZone">
         <section class="term">
         <div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
        
     </section>
-    <div class="submit"><input type="submit" value="Abgeben">  </div>
+    <div class="submit"><input type="submit" onclick="check()" value="Abgeben">  </div>
     
       </section>
         <section class="BR-Math-PickZone" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
