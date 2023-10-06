@@ -4,10 +4,18 @@ var isReset = false;
 var score = 0;
 var times = 0;
 
-window.onload = function() {
+
+
+window.onload = function(){
+    document.getElementById('popup2').style.display ='block';
+    document.getElementById("score").innerHTML = "";
+}
+const read = function(id){
+    document.getElementById(id).style.display ='none';
     generateTerm();
     generateBirds();
 positionBirds();
+document.getElementById("score").innerHTML = "Score: " + score;
 }
 
 const sleep = (milliseconds) => {
@@ -134,7 +142,7 @@ const removeBirds = async () => {
                             times++;
                             break;
                     }
-                    document.getElementById("score").innerHTML = score;
+                    document.getElementById("score").innerHTML = "Score: " + score;
                 }
               });
               correct = bird;

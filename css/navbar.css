@@ -112,7 +112,7 @@
   }
   
   nav a:hover {
-    color: var(--highlight);
+    color: var(--highlight-red);
   }
   
   .nav-toggle:checked ~ nav {

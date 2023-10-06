@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Website</title>
     
-    <link rel="stylesheet" href="./css/term.css">
+    <link rel="stylesheet" href="./css/term.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/popup.css">
     <link rel="stylesheet" href="./css/buttons.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/navbar.css?<?php echo time(); ?>">
@@ -42,10 +42,10 @@
       <p>Du kannst keine weiteren Antworten in diese "Dropzone" packen!.</p>
       <a href="#" onclick="hide('popup1')">Ok!</a>
     </div>
-    <section class="BR-Math-TermZone">
-        <section class="term">
-          <p>4</p><p>*</p><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><p>-</p><p>12</p><p>=</p> <div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
-        </section> 
+    <section class="game" id="game">
+    <section class="BR-Math-TermZone" >
+        <section class="term" id="termZone">
+       </section> 
         <div class="submit"><input type="submit" value="Abgeben" onclick="check()">  </div>
       </section>
         <section class="BR-Math-PickZone" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
@@ -59,10 +59,13 @@
 
 
 
-          <div class="BR-Math-Variable" id="0" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag1">8</h1></div>
-          <div class="BR-Math-Variable" id="1" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag2">5</h1></div>  
-          <div class="BR-Math-Variable" id="2" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag3">16</h1></div>
+       </section>
         </section>
+    <div class="popup tutorial" id="popup2">
+      <h1>Tutorial</h1>
+      <p>Löse die Gleichung richtig auf! Schiebe hierbei die Karten in das richtige Feld!</p>
+      <a href="#" onclick="read('popup2')">Verstanden!</a>
+    </div>
         <script src="./jss/term.js"></script> 
   </body>
 </html>

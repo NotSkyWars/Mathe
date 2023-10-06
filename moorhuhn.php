@@ -35,7 +35,7 @@
         
       </section>
     </main>
-    <section class="score" id="score"> 0</section>
+    <section class="score" id="score">Score: 0</section>
     <section id="term" class="term">
 </section> 
     <section class="game">
@@ -44,6 +44,12 @@
       <h1>Verloren</h1>
       <p>Du die richtige Antwort nicht gefunden!</p>
       <a href="#" onclick="hide('popup1')">Okay!</a>
+    </div>
+
+    <div class="popup tutorial" id="popup2">
+      <h1>Tutorial</h1>
+      <p>In der Mitte des Bildschirmes steht eine Aufgabe. Klicke die richtige Lösung und erhöre deine Punktzahl!</p>
+      <a href="#" onclick="read('popup2')">Verstanden!</a>
     </div>
     
   </body>
