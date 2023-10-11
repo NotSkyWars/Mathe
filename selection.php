@@ -12,6 +12,7 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <header>
+  <?php session_start(); ?>
         <img src="css/media/TestLogo.png" alt="Girl in a jacket" width="200" height="100">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <nav>
@@ -37,6 +38,19 @@
       <a href="triade.php">Triade</a>
       <a href="term.php">Termspiel</a>
       <a href="moorhuhn.php">Moorhuhn</a>
+      <?php
+      include 'Database.php';
+      if(ISSET($_POST['username']) && ISSET($_POST['password'])){
+        // Initialisiere die Datenbank und schaue, ob der Nutzer in der DB ist und ob der Name und das Passwort übereinstimmt
+        $db => new Database;
+        $db->validateUser($_POST['username'],$_POST['password']);
+      }else if(ISSET($_SESSION['username']) && ISSET($_SESSION['password'])){
+        // Schaue ob der Nutzer bereits eingeloggt ist
+      }else{
+        header("login.php");
+      }
+      
+      ?>
       </section>
     </main>
     

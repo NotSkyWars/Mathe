@@ -1,0 +1,6 @@
+{
+    "name":"root",
+    "database" : "127.0.0.1",
+    "password" : "",
+    "tablename" : "Mathespiel" 
+}

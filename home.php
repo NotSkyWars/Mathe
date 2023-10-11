@@ -9,6 +9,7 @@
     <script src="./jss/home.js"></script> 
   </head>
   <body>
+  <?php session_start(); ?>
     <main>
         <h1>Mathespiel</h1>
         <div class="loadingbar">

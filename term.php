@@ -14,7 +14,13 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <header>
-  <?php session_start();?>
+  <?php session_start();
+  
+  if(ISSET($_SESSION['username']) && ISSET($_SESSION['password'])){
+    // Schaue ob der Nutzer bereits eingeloggt ist
+  }else{
+    header("login.php");
+  }?>
         <img src="css/media/TestLogo.png" alt="Girl in a jacket" width="200" height="100">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <nav>

@@ -31,6 +31,13 @@
         <span class="underline"></span>
       </header>
   <body>
+  <?php session_start();
+  
+  if(ISSET($_SESSION['username']) && ISSET($_SESSION['password'])){
+    // Schaue ob der Nutzer bereits eingeloggt ist
+  }else{
+    header("login.php");
+  }?>
     <main>
       <span class="br"></span>
       <section class="BR-Math-Title">

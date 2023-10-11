@@ -9,13 +9,19 @@
     <script src="./jss/login.js?<?php echo time(); ?>"></script> 
   </head>
   <body>
-  <?php session_start(); ?>
+  <?php session_start();
+  
+  if(ISSET($_SESSION['username']) && ISSET($_SESSION['password']) && ISSET($_SESSION['lehrer'])){
+    // Schaue ob der Nutzer bereits eingeloggt ist
+  }else{
+    header("login.php");
+  }?>
     <main>
-        <h1>Mathespiel</h1>
-        <form method="post" action="selection.php">
+        <h1>Dashboard</h1>
+        <form method="post" action="dashboard.php">
        <div class="login-form"> 
-        <input class="login" id="username" type="text" placeholder="username">
-        <input class="login" id="password" type="password" placeholder="password">
+        <input class="login" type="text" placeholder="username">
+        <input class="login" type="password" placeholder="password">
       </div>
       <div class="submit"><input type="submit" value="Senden"></div>
         
