@@ -1,4 +1,5 @@
 var term = "";
+var terms ="";
 var id = 0;
 
 
@@ -26,10 +27,12 @@ const generateRandom = function(){
    for(var i = 0; i < randomRange(2,6); i++){  
        if(randomRange(0,2) < 1 && canBeX){
            term+="x";
+           terms+="x";
            canBeX = false;
        } else{
            canBeX = true;
-           term += operator == ""? "": "<p>"+ operator+"</p>" +"<p>"+randomRange(2,5) + "</p>";
+           term += operator == ""? "<p>"+randomRange(2,5) +"</p>": "<p>"+ operator+"</p>" +"<p>"+randomRange(2,5) + "</p>";
+           terms += operator == ""? randomRange(2,5):  operator + randomRange(2,5);
        }
     switch(randomRange(0,4)){
         case 4:
@@ -55,14 +58,16 @@ const generateRandom = function(){
 
    const termOut = document.createElement("div");
    generateRandomAnswers();
-   termOut.innerHTML = (term + "<p>=</p>x").replaceAll("x", "<div class='BR-Math-DropZone' ondrop='drop(event)' ondragover='allowDrop(event)'> </div>");
+   termOut.innerHTML = (term + "<p>=</p><p>" + Math.floor(Math.random() * Math.floor(Math.random() * 100)) + "</p>").replaceAll("x", "<div class='BR-Math-DropZone' ondrop='drop(event)' ondragover='allowDrop(event)'> </div>");
    document.getElementById('termZone').appendChild(termOut);
    console.log(term + " d");
+   console.log(terms);
 }
 
 const generateRandomAnswers = function(){
+    var canbeAnswer =true;
     var random = [Math.floor(Math.random() * Math.floor(Math.random() * 100)),Math.floor(Math.random() * Math.floor(Math.random() * 100)),Math.floor(Math.random() * Math.floor(Math.random() * 100))]
-    for(var i = 0 ; i < countInstances(term, "x",true); i ++){
+    for(var i = 0 ; i < countInstances(term, "x",true) + 6; i ++){
         const aOutput = document.createElement("div");
         aOutput.id = id;
         console.log("idsa");
@@ -70,7 +75,7 @@ const generateRandomAnswers = function(){
         aOutput.className = "BR-Math-Variable";
         aOutput.draggable = "true";
         aOutput.setAttribute ("ondragstart","drag(event)");
-        aOutput.innerHTML = '<div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag1">'+Math.floor(Math.random() * Math.floor(Math.random() * 100))+'</h1>';
+       aOutput.innerHTML = '<div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag1">'+Math.floor(Math.random() * Math.floor(Math.random() * 100))+'</h1>';
         document.getElementById('BR-Math-PickZone').appendChild(aOutput);
     }
 }
