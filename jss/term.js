@@ -57,13 +57,13 @@ const generateRandom = function(){
    }
 
    const termOut = document.createElement("div");
-   generateRandomAnswers();
-   termOut.innerHTML = (term + "<p>=</p><p>" + Math.floor(Math.random() * Math.floor(Math.random() * 100)) + "</p>").replaceAll("x", "<div class='BR-Math-DropZone' ondrop='drop(event)' ondragover='allowDrop(event)'> </div>");
+  // generateRandomAnswers();
+   termOut.innerHTML = (term + "<p>=</p><p>" + Math.floor(Math.random() * Math.floor(Math.random() * 100)) + "</p>").replaceAll("x", "<input class='BR-Math-DropZone'> </div>");
    document.getElementById('termZone').appendChild(termOut);
    console.log(term + " d");
    console.log(terms);
 }
-
+/*
 const generateRandomAnswers = function(){
     var canbeAnswer =true;
     var random = [Math.floor(Math.random() * Math.floor(Math.random() * 100)),Math.floor(Math.random() * Math.floor(Math.random() * 100)),Math.floor(Math.random() * Math.floor(Math.random() * 100))]
@@ -79,6 +79,7 @@ const generateRandomAnswers = function(){
         document.getElementById('BR-Math-PickZone').appendChild(aOutput);
     }
 }
+*/
 
 const randomRange = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 

@@ -1,0 +1,145 @@
+@import url('colors.css');
+@import url(colors.css);
+@import url(buttons.css);
+
+
+@keyframes fadein{
+    from{
+        opacity: 0;
+    }
+    to{
+opacity: 1;
+    }
+}
+
+body{
+    background: linear-gradient(-45deg, var(--gray), var(--background), var(--background), var(--dark-gray));
+	background-size: 400% 400%;
+	animation: fadein 2s;
+	height: 100vh;
+    overflow: hidden;
+    font-family: 'Roboto';
+}
+
+main{
+    margin: 0vh 20% 2vh 20%;
+    opacity: 1;
+    text-align: center;
+    
+}
+.card-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1vw;
+}
+.br{
+    display: inline-block;
+    height: 7rem;
+}
+
+
+.card-form select{
+    margin-top: 1rem;
+    width: 70%;
+    height: 3rem;
+    background-color: transparent;
+    color: white;
+    border: .2vw solid #1C6EA4;
+    transition: .5s;
+}
+.card-form select option{
+    color: black;
+    border: .2vw solid #1C6EA4;
+}
+
+.card-form textarea:focus, .card-form select:focus{
+    outline: none;
+    transform: scale(1.1);
+}
+
+.card-form:invalid{
+    border: .2vw solid red;
+}
+.card-form textarea{
+    color: white;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    font-family: 'Roboto';
+    display: inline;
+    border-radius: 1rem;
+    word-break: break-all;
+    resize: none;
+    height: 20rem;
+    transition: .5s;
+    border: .2vw solid #1C6EA4;
+}
+.card-form:required:valid{
+    background-color: green;
+}
+main img{
+    width: 2rem;
+    height: 2rem;
+}
+.submit{
+    margin-top: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    color: white;
+    margin-bottom: 10vh;
+    font-size: 5vw;
+    text-decoration: var(--highlight-yellow) underline .5vh;
+    font-family: 'Roboto';
+    animation: move 1s ease infinite;
+    transition: .1s;
+  }
+
+h2{
+    font-size: 3vw;
+    color: white;
+    font-family: 'Roboto';
+}
+
+
+
+@media only screen and (max-width : 992px) {
+    .login-form{
+        flex-direction: column;
+    }
+main{
+    margin: 0;
+}
+img{
+   display: none; 
+}
+    .submit{
+        
+        flex-direction: column;
+    }
+  }
+
+  @keyframes move{
+      0%{
+          transform: translateY(1vh);
+      }
+      25%{
+          transform: translateY(.5vh);
+      }
+      50%{
+        transform: translateY(1vh);
+        
+      }
+      75%{
+        transform: translateY(1.5vh);
+      }
+      100%{
+          transform: translateY(1vh);
+      }
+  }
+

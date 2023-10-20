@@ -7,7 +7,6 @@
     <title>HTML 5 Boilerplate</title>
     <link rel="stylesheet" href="./css/schueler.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/navbar.css?<?php echo time(); ?>">
-    <script src="./jss/login.js?<?php echo time(); ?>"></script> 
   </head>
   <header>
 
@@ -16,7 +15,6 @@
 <nav>
   <ul>
     <li><a href="dashboard.php">Dashboard</a></li>
-    <li><a href="cards.php">Cards</a></li>
     <li><a href="selection.php">Selektion</a></li>
     <li><a href="abmelden">Abmelden</a></li>
   </ul>
