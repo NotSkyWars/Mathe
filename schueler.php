@@ -16,7 +16,7 @@
   <ul>
     <li><a href="dashboard.php">Dashboard</a></li>
     <li><a href="selection.php">Selektion</a></li>
-    <li><a href="abmelden">Abmelden</a></li>
+    <li><form action="login.php" method="post" ><input type="submit" name="signout" id="signout" value="Abmelden"></form></li>
   </ul>
 </nav>
 <label for="nav-toggle" class="nav-toggle-label">
@@ -26,7 +26,15 @@
 </header>
   <body>
   <span class="br"></span>
-  <?php session_start();
+  <?php
+  include('Database.php');
+  session_start();
+  if(isset($_POST['username'])){
+    $db = new Database;
+    $db->connect();
+    $db->addUser($_POST['username'],$_POST['password'],$_POST['klasse'],$_POST['type']);
+    var_dump($_POST);
+  }
   
   if(ISSET($_SESSION['username']) && ISSET($_SESSION['password']) && ISSET($_SESSION['lehrer'])){
     // Schaue ob der Nutzer bereits eingeloggt ist
@@ -35,12 +43,12 @@
   }?>
     <main>
         <h1>Schüler hinzufügen</h1>
-        <form method="post" action="schueler.php">
+        <form method="post">
        <div class="login-form"> 
-        <input class="login" type="text" placeholder="username">
-        <input class="login" type="password" placeholder="password">
-        <input class="login" type="text" placeholder="klasse">
-        <input class="login" type="text" placeholder="type">
+        <input class="login" id="username" name="username" type="text" placeholder="username">
+        <input class="login" id="password" name="password" type="password" placeholder="password">
+        <input class="login" id="klasse" name="klasse" type="text" placeholder="klasse">
+        <input class="login" id="type" name="type" type="text" placeholder="type">
       </div>
       <div class="submit"><input type="submit" value="Senden"></div>
         

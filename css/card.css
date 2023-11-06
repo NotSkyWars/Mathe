@@ -1,6 +1,5 @@
 @import url('colors.css');
-@import url(colors.css);
-@import url(buttons.css);
+@import url('buttons.css');
 
 
 @keyframes fadein{
@@ -42,6 +41,7 @@ main{
 
 
 .card-form select{
+    padding: .5rem;
     margin-top: 1rem;
     width: 70%;
     height: 3rem;
@@ -49,6 +49,10 @@ main{
     color: white;
     border: .2vw solid #1C6EA4;
     transition: .5s;
+}
+
+.card-form select:valid{
+    border: .2vw solid green;
 }
 .card-form select option{
     color: black;
@@ -64,6 +68,7 @@ main{
     border: .2vw solid red;
 }
 .card-form textarea{
+    padding: .5rem;
     color: white;
     text-align: left;
     background-color: transparent;
@@ -80,7 +85,9 @@ main{
 .card-form:required:valid{
     background-color: green;
 }
-main img{
+
+main svg{
+    fill: white;
     width: 2rem;
     height: 2rem;
 }
@@ -109,13 +116,28 @@ h2{
 
 
 @media only screen and (max-width : 992px) {
-    .login-form{
+    .card-form{
+        width: 100%;
         flex-direction: column;
+    }
+    .card-form textarea{
+        font-family:unset;
+        height: 5rem;
+        width: 70%;
+        font-size: .8rem;
     }
 main{
     margin: 0;
 }
-img{
+
+.br{
+    height: 8rem;
+}
+
+h1{
+    font-size: 4rem;
+}
+svg{
    display: none; 
 }
     .submit{

@@ -1,7 +1,7 @@
 @import url('colors.css');
 
 
-input[type=submit] {
+main input[type=submit] {
     padding: 1vh 10% 1vh 10%;
     background-color: var(--highlight-green);
     border: .3vw solid none;
@@ -21,7 +21,18 @@ input[type=submit] {
     font-family: 'Roboto';
 }
 
-input[type=submit]:hover {
+main input[type=submit]:hover {
 
     transform: scale(1.1);
 }
+
+
+main input[name="hollow"] {
+    margin-top: 1rem;
+    width: 70%;
+    height: 3rem;
+    background-color: transparent;
+    color: white;
+    border: .2vw solid #1C6EA4;
+    transition: .5s;
+  }

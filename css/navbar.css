@@ -90,6 +90,10 @@
     transition: transform 400ms ease-in-out;
     
   }
+  nav input{
+    background-color: transparent;
+    border: none;
+  }
   
   nav ul {
     margin: 0;
@@ -102,7 +106,7 @@
     margin-left: 1em;
   }
   
-  nav a {
+  nav a, nav input {
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
@@ -111,23 +115,26 @@
     transition: opacity 150ms ease-in-out;
     font-family: 'Roboto';
   }
+
   
-  nav a:hover {
+  nav a:hover , nav input:hover{
     color: var(--highlight-red);
   }
   
   .nav-toggle:checked ~ nav {
+    padding: 1rem;
     transform: scale(1,1);
+
   }
   
-  .nav-toggle:checked ~ nav a {
+  .nav-toggle:checked ~ nav a, .nav-toggle:checked ~ nav input  {
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
   }
 
   @media screen and (max-width:1199px) {
     nav{
-      top: 107%;
+      top: 100%;
     }
   }
   @media screen and (min-width:1200px) {
@@ -146,7 +153,7 @@
     nav {
       all: unset; /* this causes issues with Edge, since it's unsupported */
       
-      /* the following lines are not from my video, but add Edge support */
+
       position: relative;
       text-align: left;
       transition: none;
@@ -154,7 +161,6 @@
       background: none;
       top: initial;
       left: initial;
-      /* end Edge support stuff */
       
       grid-column: 3 / 4;
       display: flex;
@@ -171,12 +177,12 @@
       margin-bottom: 0;
     }
     
-    nav a {
+    nav a, nav input{
       opacity: 1;
       position: relative;
     }
     
-    nav a::before {
+    nav a::before , nav input::before{
       content: '';
       display: block;
       height: 5px;
@@ -189,7 +195,7 @@
       transition: transform ease-in-out 250ms;
     }
     
-    nav a:hover::before {
+    nav a:hover::before, nav input:hover::before {
       transform: scale(1,1);
     }
   }

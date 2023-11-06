@@ -18,7 +18,7 @@
   <ul>
     <li><a href="dashboard.php">Dashboard</a></li>
     <li><a href="selection.php">Selektion</a></li>
-    <li><a href="abmelden">Abmelden</a></li>
+    <li><form action="login.php" method="post" ><input type="submit" name="signout" id="signout" value="Abmelden"></form></li>
   </ul>
 </nav>
 <label for="nav-toggle" class="nav-toggle-label">
@@ -34,10 +34,12 @@
         <form method="post">
        <div class="card-form"> 
         <textarea  class="question" name="question" id="question" type="text" placeholder="Frage" required></textarea>
-        <img src = "css/media/arrows.svg" alt="My Happy SVG"/>
+        <svg id="arrows" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 14v2l-4-3 4-3v2h12v2H4zm8-12V0l4 3-4 3V4H0V2h12z" fill-rule="evenodd"/>
+</svg>
         <textarea  class="answer" name="answer" id="answer" type="text" placeholder="Antwort" required></textarea>
         <select  class="klasse" name="klasse" id="klasse" type="text" placeholder="asdsad" required >
-        <option value="0">----------Klassen----------</option>
+        <option value="0" selected>----------Klassen----------</option>
         <option value="7">7a</option>
         <option value="7">7b</option>
         <option value="7">7OS</option>
@@ -57,7 +59,7 @@
     <option value="10">10OS2</option>
 </select>
       </div>
-      <div class="submit"><input type="submit" value="Hinzufügen"></div>
+      <div class="submit"><input name="hollow" type="submit" value="Hinzufügen"></div>
         
        </form>
 

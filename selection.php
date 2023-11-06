@@ -20,7 +20,7 @@
             <li><a href="klassen.php">Klassen</a></li>
             <li><a href="selection.php">Spielmodi</a></li>
             <li><a href="faq.php">FaQ</a></li>
-            <li><a href="abmelden">Abmelden</a></li>
+            <li><form action="login.php" method="post" ><input type="submit" name="signout" id="signout" value="Abmelden"></form></li>
           </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label">

@@ -28,7 +28,7 @@ const sleep = (milliseconds) => {
         if(isReset){reset = Infinity;}
         Array.from(document.getElementsByClassName("bird")).forEach(element => {
             if(element.getBoundingClientRect().right <= (window.innerWidth || document.documentElement.clientWidth)){
-                element.style.left = 5*reset + "px"; 
+               // element.style.left = 5*reset + "px"; 
                
             }else{
                 if(correct === element){

@@ -25,16 +25,21 @@ body{
   }
 .bird{
     position: relative;
-    width: 10vw;
-    height: 6vh;
+    width: 12vw;
+    height: 10vh;
     left: 0;
-    background-image: url('media/fly.gif');
-    background-size:cover;
-    background-position-y: 10vh;
+    color: white;
+    background-image: url('media/wings.gif');
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
     font-size: 2vw;
     border-radius: 10vw;
     transform: .1s;
-}
+background-color: transparent;
+border: none;
+  }
+
 
 .score{
   color: white;
@@ -60,3 +65,19 @@ button{
     justify-content: center;
     margin-top: 2vh;
 }
+
+
+@media only screen and (max-width : 992px) {
+  .br{
+    height: 10rem;
+  }
+  .bird{
+    height: auto;
+    width: 12rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+
+

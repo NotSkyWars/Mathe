@@ -24,7 +24,11 @@
 
        <?php
       include 'Database.php';
-      var_dump($_POST);
+
+      if(isset($_POST['signout'])){
+        unset($_SESSION['username']);
+        unset($_SESSION['password']);
+      }
       if(isset($_POST['username']) && isset($_POST['password'])){
         // Initialisiere die Datenbank und schaue, ob der Nutzer in der DB ist und ob der Name und das Passwort übereinstimmt
         echo "sadads";
@@ -34,7 +38,7 @@
  
       }else if(ISSET($_SESSION['username']) && ISSET($_SESSION['password'])){
         // Schaue ob der Nutzer bereits eingeloggt ist
-        echo "sadads";
+
       }else{
         header("login.php");
       }

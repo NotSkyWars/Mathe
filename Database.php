@@ -41,8 +41,23 @@ class Database{
         return $result['author'];
     }
 
+    private function getHighestNID(): int{
+        $result = $this->con->prepare("SELECT MAX(NID) as max_items
+        FROM nutzer;");
+        $result->execute();
+        $result = $result->fetch();
+        $result = $result[0]+1;
+        return $result;
+    }
+
+    public function addUser(string $name, string $password, string $klasse,string $teacher){
+        $this->con->prepare("INSERT INTO `nutzer`(`NID`, `NAME`, `PASSWORD`, `KLASSE` , `LEHRER`) VALUES (:value1,:value2,:value3,:value4,:value5);")->execute(
+        ['value1' => $this->getHighestNID(), 'value2' => $name, 'value3' => $password,'value4' => $klasse, 'value5' => $teacher]
+        );
+    }
+
     private function createDatabase(){
-        $this->con->prepare("CREATE TABLE IF NOT EXISTS `nutzer` ( `NID` INT NOT NULL , `NAME` Text NOT NULL , `PASSWORD` TEXT NOT NULL, `LEHRER` TEXT NOT NULL );")->execute();
+        $this->con->prepare("CREATE TABLE IF NOT EXISTS `nutzer` ( `NID` INT NOT NULL , `NAME` Text NOT NULL , `PASSWORD` TEXT NOT NULL, `KLASSE` TEXT NOT NULL, `LEHRER` TEXT NOT NULL, PRIMARY KEY(`NID`) );")->execute();
     }
 
     public function validateUser(string $name, string $password){
@@ -50,7 +65,7 @@ class Database{
             if($password == $this->get("PASSWORD","NAME",$name)){
                 $_SESSION['username'] = $name;
                 $_SESSION['password'] = $password;
-               if($this->get("LEHRER","NAME",$name) == "Yes"){
+               if($this->get("LEHRER","NAME",$name) == "Lehrer"){
                 $_SESSION['lehrer'] = true;
                }
     
