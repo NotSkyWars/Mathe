@@ -37,7 +37,7 @@ h1{
 }
 
 .selection a{
-    width: 30%;
+    width: 20%;
     transition: .5s;
 }
 main a{
@@ -74,7 +74,7 @@ main{
         height: 30vh;
     }
     .selection a{
-        height: 10vh;
+        height: 10vw;
         width: 80%;
         margin-bottom: 3vw;
     }

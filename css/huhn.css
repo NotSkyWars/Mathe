@@ -68,12 +68,19 @@ button{
 
 
 @media only screen and (max-width : 992px) {
+  .term{
+    font-size: 2rem;
+  }
+
+  .score{
+    font-size: 1rem;
+  }
   .br{
     height: 10rem;
   }
   .bird{
     height: auto;
-    width: 12rem;
+    width: 15rem;
     font-size: 1.5rem;
     margin-top: 1rem;
   }

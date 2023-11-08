@@ -38,7 +38,7 @@
       <a href="triade.php">Triade</a>
       <a href="term.php">Termspiel</a>
       <a href="moorhuhn.php">Moorhuhn</a>
-
+      <a href="moorhuhn.php">Cards</a>
       <?php session_start();
   
   if(ISSET($_SESSION['username']) && ISSET($_SESSION['password'])){

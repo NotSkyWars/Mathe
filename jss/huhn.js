@@ -25,16 +25,30 @@ const sleep = (milliseconds) => {
   const positionBirds = async () => {
     isReset = false;
     for(let reset = 0; reset < Infinity; reset++){
+       
         if(isReset){reset = Infinity;}
         Array.from(document.getElementsByClassName("bird")).forEach(element => {
-            if(element.getBoundingClientRect().right <= (window.innerWidth || document.documentElement.clientWidth)){
-               // element.style.left = 5*reset + "px"; 
-               
+            
+            if((window.screen.availWidth || document.documentElement.clientWidth) <= 500){
+                if(element.getBoundingClientRect().bottom <= (window.innerHeight || document.documentElement.clientHeight)){
+                    element.style.top = 3*reset + "px"; 
+                    
+                 }else{
+                     if(correct === element){
+                         resetGame();
+                     }
+                     element.remove();
+                 }
             }else{
-                if(correct === element){
-                    resetGame();
-                }
-                element.remove();
+                if(element.getBoundingClientRect().right <= (window.innerWidth || document.documentElement.clientWidth)){
+                    element.style.left = 5*reset + "px"; 
+                    
+                 }else{
+                     if(correct === element){
+                         resetGame();
+                     }
+                     element.remove();
+                 }
             }
           });
           await sleep(20); 
@@ -155,5 +169,7 @@ const removeBirds = async () => {
         removeBirds();
 
     }
+
+    
 
     const randomRange = (min, max) => Math.floor(Math.random() * (max - min)) + min;
