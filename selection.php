@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Website</title>
     
-    <link rel="stylesheet" href="./css/selection.css">
+    <link rel="stylesheet" href="./css/selection.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/popup.css">
     <link rel="stylesheet" href="./css/navbar.css?<?php echo time(); ?>">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
@@ -35,16 +35,16 @@
       <h1>Wähle dein Spiel</h1>
       </section>
       <section class="selection">
-      <a href="triade.php">Triade</a>
-      <a href="term.php">Termspiel</a>
-      <a href="moorhuhn.php">Moorhuhn</a>
+      <a href="triade.php" class="triade">Triade</a>
+      <a href="term.php" class="term">Termspiel</a>
+      <a href="moorhuhn.php" class="huhn">Moorhuhn</a>
 
       <?php session_start();
   
   if(ISSET($_SESSION['username']) && ISSET($_SESSION['password'])){
     // Schaue ob der Nutzer bereits eingeloggt ist
     if(ISSET($_SESSION['lehrer'])){
-      echo ' <a href="dashboard.php">Dashboard</a>';
+      echo ' <a href="dashboard.php" class="dashboard">Dashboard</a>';
     }
   }else{
     header("Location: login.php");

@@ -12,15 +12,15 @@ const check = async () => {
     for(var i = 0; i < dropzones.length;i++){
         console.log(dropzones[i].childNodes);
         if(dropzones[i].childNodes[1].innerHTML.includes("x=")){
-            variable = dropzones[i].childNodes[1].childNodes[2].innerHTML.replace("x=","")
+            variable = dropzones[i].childNodes[1].childNodes[1].innerHTML.replace("x=","")
             console.log("variable: " + variable);
         }else if(dropzones[i].childNodes[1].innerHTML.includes("x")){
-            term = dropzones[i].childNodes[1].childNodes[2].innerHTML
+            term = dropzones[i].childNodes[1].childNodes[1].innerHTML
             console.log("term: " + term);
 
         }else{
             if(dropzones[i].childNodes[1] != null){
-                answer = dropzones[i].childNodes[1].childNodes[2].innerHTML
+                answer = dropzones[i].childNodes[1].childNodes[1].innerHTML
                 console.log("answer: " + answer);
             }
         }

@@ -36,20 +36,38 @@ h1{
     margin-top: 0;
 }
 
+.triade{
+    background-image: url('media/Triade.png');
+}
+
+.term {
+    background-image: url('media/term.png');
+}
+
+.huhn {
+    background-image: url('media/huhn.png');
+}
+.dashboard {
+    background-image: url('media/dashboard.png');
+}
+
 .selection a{
-    width: 30%;
+    width: 20%;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
     transition: .5s;
 }
 main a{
     padding: 3vh 3vw 3vh 3vw;
     text-align: center;
-    background-color: var(--highlight-red2) ;
+    /*background-color: var(--highlight-red2) ;*/
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 4vw;
-    color: var(--white);
+    color: rgba(0, 0, 0, 0);
 }
 
 h1:hover{
@@ -59,7 +77,9 @@ h1:hover{
 
 .selection a:hover{
     transform: scale(.9);
-    background-color: var(--highlight-red);
+    background-color: rgb(232, 80, 80);
+    border: .3vw none var(--dark-gray);
+    border-radius: .5vw;
 }
 
 main{

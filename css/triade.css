@@ -1,5 +1,5 @@
 
-@import url(colors.css);
+@import url(buttons.css);
 
 *, *::before, *::after {
       padding:0;
@@ -60,6 +60,9 @@ main h1{
   float:left;
   border: .3vw dashed rgb(191, 195, 201);
 border-radius: .3vw;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
   }
 
   .BR-Math-PickZone{
@@ -105,22 +108,34 @@ border-radius: 17px;
     width: 8vw;
    height: 9.5vh;
     text-align: center;
-  
-    color: var(--gray);
-    background-color: var(--light-gray);
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+    color: var(--white);
+   /* background-color: var(--light-gray);
     border: .3vw solid var(--dark-gray);
-border-radius: .5vw;
+border-radius: .5vw;*/
 
+  }
+
+  .item-value{
+    background-image: url('media/Frosch.png');
+  }
+  .item-term{
+    background-image: url('media/Tiger.png');
+  }
+  .item-answer{
+    background-image: url('media/kuh.png');
   }
 .decor-border{
   width: .5vw;
   float: left;
 }
   .BR-Math-Variable-decor{
-    border: .3vw solid var(--dark-gray);
+   /* border: .3vw solid var(--dark-gray);
     background-color: var(--dark-gray);
 height: 100%;
-
+*/
   }
 
   .BR-Math-Variable h1{
@@ -160,26 +175,25 @@ height: 100%;
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-    .decor-border{
-        height: 9vh;
-      }
   .BR-Math-Variable h1{
-    font-size: 3vw;
+   height: 125%;
+    font-size: 4rem;
     display: flex;
 align-items: center;
-justify-content: center;
+justify-content:center;
   }
 }
 
 @media only screen and (max-width : 992px) {
   .BR-Math-Variable {
-    width: unset;
-    height: unset;
     display: flex;
 align-items: center;
 justify-content: center;
+width: 100%;
+height: 100%;
 }
 .BR-Math-PickZone{
+  flex-direction: column;
     margin: 1vh 5% 2vh 5%;
 }
 .BR-Math-DropZone{
@@ -195,6 +209,8 @@ justify-content: center;
 .BR-Math-DropZone .BR-Math-Variable{
   margin-left: -3vw;
   margin-top: -.5vh;
+  width: unset;
+  height: unset;
   z-index: 2;
 }
 }

@@ -40,7 +40,7 @@
     <main>
       <span class="br"></span>
       <section class="BR-Math-Title">
-        <h1>Mathespiel</Mathespiel></h1>
+        <h1>Term</Mathespiel></h1>
       </section>
     </main>
     <div class="popup" id="popup1">
@@ -58,7 +58,7 @@
         <?php 
         if(ISSET($_SESSION['login'])){
         }else{
-          header("login.php")
+          header("login.php");
         }
 
         ?>

@@ -41,7 +41,7 @@
     <main>
       <span class="br"></span>
       <section class="BR-Math-Title">
-        <h1>Mathespiel</Mathespiel></h1>
+        <h1>Triade</Mathespiel></h1>
       </section>
     </main>
     <div class="popup" id="popup1">
@@ -58,12 +58,12 @@
     
       </section>
         <section class="BR-Math-PickZone" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-        <div class="BR-Math-Variable" id="0" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag1">x^2</h1></div>
-          <div class="BR-Math-Variable" id="1" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag2">x=5</h1></div>  
-          <div class="BR-Math-Variable" id="2" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag3">25</h1></div>
-          <div class="BR-Math-Variable" id="3" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag1">x^2</h1></div>
-          <div class="BR-Math-Variable" id="4" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag2">x=5</h1></div>  
-          <div class="BR-Math-Variable" id="5" draggable="true" ondragstart="drag(event)"> <div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag3">25</h1></div>
+        <div class="BR-Math-Variable item-term" id="0" draggable="true" ondragstart="drag(event)"><h1 id="drag1">x^2</h1></div>
+          <div class="BR-Math-Variable item-value" id="1" draggable="true" ondragstart="drag(event)"> <h1 id="drag2">x=5</h1></div>  
+          <div class="BR-Math-Variable item-answer" id="2" draggable="true" ondragstart="drag(event)"> <h1 id="drag3">25</h1></div>
+          <div class="BR-Math-Variable item-term" id="0" draggable="true" ondragstart="drag(event)"> <h1 id="drag1">x^2</h1></div>
+          <div class="BR-Math-Variable item-value" id="1" draggable="true" ondragstart="drag(event)"> <h1 id="drag2">x=5</h1></div>  
+          <div class="BR-Math-Variable item-answer" id="2" draggable="true" ondragstart="drag(event)"> <h1 id="drag3">25</h1></div>
         </section>
     
   </body>
