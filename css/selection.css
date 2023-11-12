@@ -43,6 +43,9 @@ h1{
 .term {
     background-image: url('media/term.png');
 }
+.card{
+    background-image: url('media/cards.png');
+}
 
 .huhn {
     background-image: url('media/huhn.png');
@@ -94,7 +97,7 @@ main{
         height: 30vh;
     }
     .selection a{
-        height: 10vh;
+        height: 10vw;
         width: 80%;
         margin-bottom: 3vw;
     }
