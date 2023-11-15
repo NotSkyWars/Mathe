@@ -14,10 +14,8 @@ function allowDrop(ev) {
     var data = ev.dataTransfer.getData("text");
     if(ev.target.children.length = 1 && ev.target.classList.contains('BR-Math-DropZone')){
     ev.target.appendChild(document.getElementById(data));
-    console.log(ev.target.children.length);
     }else if(ev.target.classList.contains('BR-Math-PickZone')){
       ev.target.appendChild(document.getElementById(data));
-      console.log(ev.target.children.length);
     }else{
       document.getElementById('popup1').style.display ='block';
     }
@@ -31,7 +29,6 @@ function allowDrop(ev) {
 
   window.onload = function() {
     var isDropping = null
-    
 
     var dropzones = document.getElementsByClassName('BR-Math-DropZone');
 
@@ -63,7 +60,7 @@ function allowDrop(ev) {
           isDropping = null;
           console.log(isDropping);
         }
-      }else if(element != null && element.hasChildNodes){
+      }else if(e != null && element.hasChildNodes){
         isDropping = element.firstChild;
         console.log(isDropping + " CHILD");
       }
@@ -71,7 +68,8 @@ function allowDrop(ev) {
 
 
 
-    var variables = document.getElementsByClassName('BR-Math-Variable');
+    var variables = document.getElementsByName('BR-Math-Variable');
+    console.log(variables + " sdasda");
     Array.from(variables).forEach(element => {
       element.addEventListener('touchstart', function(e) {
         if(isDropping == null){
@@ -80,9 +78,11 @@ function allowDrop(ev) {
           isDropping == null;
         }
 
-        //console.log(isDropping);
+        console.log(isDropping);
       });
+      console.log(element);
     });
+    console.log("Loading");
   }
 
   

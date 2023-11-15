@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./css/popup.css">
     <link rel="stylesheet" href="./css/buttons.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/navbar.css?<?php echo time(); ?>">
-    <script src="./jss/dragndrop.js"></script> 
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <header>
@@ -37,17 +36,17 @@
         <span class="underline"></span>
       </header>
   <body>
-  <?php 
+    <main>
+      <span class="br"></span>
+      <?php 
         if(ISSET($_SESSION['login'])){
         }else{
-          header("login.php")
+          header("login.php");
         }
 
         ?>
-    <main>
-      <span class="br"></span>
       <section class="BR-Math-Title">
-        <h1>Cards</Mathespiel></h1>
+        <h1>Term</h1>
       </section>
     </main>
     <div class="popup" id="popup1">
@@ -56,30 +55,23 @@
       <a href="#" onclick="hide('popup1')">Ok!</a>
     </div>
     <section class="game" id="game">
-        <?php
-        /*
-        [X ist das blabalba] - [Was ist X?]
-        [Y ist das blabalba] \ [Was ist Y?]
-        [Z ist das blabalba] / [Was ist Z?]
-        */
-        ?>    
-
-<table class="tftable" border="1">
-        <tr><th>Cards</th><th>Cards2</th></tr>
-        <tr><td><button class="card" id="1">Test</button></td><td><button class="card" id="2">Test2</button></td></tr>
-        <tr><td><button class="card" id="1">Test</button></td><td><button class="card" id="2">Test2</button></td></tr>
-        <tr><td><button class="card" id="1">Test</button></td><td><button class="card" id="2">Test2</button></td></tr>
-        <tr><td><button class="card" id="1">Test</button></td><td><button class="card" id="2">Test2</button></td></tr>
-        <tr><td><button class="card" id="1">Test</button></td><td><button class="card" id="2">Test2</button></td></tr>
-        <tr><td><button class="card" id="1">Test</button></td><td><button class="card" id="2">Test2</button></td></tr>
-    </table>
-
-</section>
-
+    <section class="BR-Math-TermZone" >
+    <section class="term">
+        <div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
+       
+    </section>
+        <div class="submit"><input type="submit" value="Abgeben" id="submit-button" onclick="check()">  </div>
+      </section>
+        <section class="BR-Math-PickZone" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+<div class="BR-Math-Variable" id="0" draggable="true" type="Frage" ondragstart="drag(event)"><h1 name="Frage" id="drag1">x^2</h1></div>
+<div class="BR-Math-Variable" id="1" draggable="true"  type="Antwort" ondragstart="drag(event)"><h1 name="Antwort" id="drag1">x^2</h1></div>
+       </section>
+        </section>
     <div class="popup tutorial" id="popup2">
       <h1>Tutorial</h1>
-      <p>Verbinde die richtigen Karten miteinander!</p>
+      <p>Löse die Gleichung richtig auf! Schiebe hierbei die Karten in das richtige Feld!</p>
       <a href="#" onclick="read('popup2')">Verstanden!</a>
     </div>
+    <script src="./jss/cards.js"></script> 
+    <script src="./jss/dragndrop.js"></script> 
   </body>
-</html>

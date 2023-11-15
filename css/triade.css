@@ -144,40 +144,13 @@ height: 100%;
     float: center;
   }
 
-  /* Custom, iPhone Retina */ 
-@media only screen and (min-width : 320px) {
-  .BR-Math-Variable h1 {
-    font-size: 5vw;
-}
-  .decor-border{
-    height: 7.5vh;
-  }
-      
-}
 
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
-  .BR-Math-Variable {
-      font-size: 1vw;
-  }
-  .decor-border{
-    height: 7.5vh;
-  }
-}
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-  .decor-border{
-    height: 7.5vh;
-  }
-
-}
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
   .BR-Math-Variable h1{
    height: 125%;
-    font-size: 4rem;
+    font-size: 2rem;
     display: flex;
 align-items: center;
 justify-content:center;
@@ -204,6 +177,7 @@ height: 100%;
 }
 .BR-Math-Variable h1{
   padding: 0 2vw 0 2vw;
+  font-size: 1rem;
 }
 
 .BR-Math-DropZone .BR-Math-Variable{
@@ -213,9 +187,4 @@ height: 100%;
   height: unset;
   z-index: 2;
 }
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-
 }
