@@ -35,8 +35,9 @@ function allowDrop(ev) {
     Array.from(dropzones).forEach(element => {
       element.addEventListener('touchstart',function(e){
         if(isDropping != null){
-          if(element.childElementCount < 1 && isDropping != null){
+          if(element.childElementCount < 1 && isDropping != null && element.id != "BR-Math-PickZone"){
             element.appendChild(isDropping);
+            console.log(isDropping);
             isDropping = null;
             console.log(isDropping);
           }else if(isDropping && isDropping.parentNode   !== element){
@@ -60,8 +61,8 @@ function allowDrop(ev) {
           isDropping = null;
           console.log(isDropping);
         }
-      }else if(e != null && element.hasChildNodes){
-        isDropping = element.firstChild;
+      }else if(e != null && e.hasChildNodes){
+        isDropping = e.firstChild;
         console.log(isDropping + " CHILD");
       }
   });
@@ -72,13 +73,14 @@ function allowDrop(ev) {
     console.log(variables + " sdasda");
     Array.from(variables).forEach(element => {
       element.addEventListener('touchstart', function(e) {
-        if(isDropping == null){
+        if(isDropping == null ){
         isDropping = element;
         }else{
           isDropping == null;
         }
 
-        console.log(isDropping);
+        console.log(element);
+        console.log("sdaads");
       });
       console.log(element);
     });

@@ -52,19 +52,16 @@
         <div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
        
     </section>
-    <div class="submit"><input type="submit" onclick="check()" value="Abgeben">  </div>
-    
+    <div class="submit"><input type="submit" value="Abgeben" id="submit-button" onclick="check()">  </div>
       </section>
         <section class="BR-Math-PickZone" name="BR-Math-Variable" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
         <div class="BR-Math-Variable item-term" name="BR-Math-Variable" id="0" draggable="true" ondragstart="drag(event)"><h1 id="drag1">x^2</h1></div>
-          <div class="BR-Math-Variable item-value" name="BR-Math-Variable" id="1" draggable="true" ondragstart="drag(event)"> <h1 id="drag2">x=5</h1></div>  
-          <div class="BR-Math-Variable item-answer" id="2" draggable="true" ondragstart="drag(event)"> <h1 id="drag3">25</h1></div>
-          <div class="BR-Math-Variable item-term" id="0" draggable="true" ondragstart="drag(event)"> <h1 id="drag1">x^2</h1></div>
-          <div class="BR-Math-Variable item-value" id="1" draggable="true" ondragstart="drag(event)"> <h1 id="drag2">x=5</h1></div>  
-          <div class="BR-Math-Variable item-answer" id="2" draggable="true" ondragstart="drag(event)"> <h1 id="drag3">25</h1></div>
-        </section>
-        <script src="./jss/dragndrop.js?<?php echo time(); ?>"></script> 
+        <div class="BR-Math-Variable item-value" name="BR-Math-Variable" id="1" draggable="true" ondragstart="drag(event)"><h1 id="drag2">x=5</h1></div>
+        <div class="BR-Math-Variable item-answer" name="BR-Math-Variable" id="2" draggable="true" ondragstart="drag(event)"><h1 id="drag3">25</h1></div> 
+      </section>
+          </section>
     <script src="./jss/triade.js?<?php echo time(); ?>"></script>   
+    <script src="./jss/dragndrop.js?<?php echo time(); ?>"></script> 
   </body>
 
 </html>

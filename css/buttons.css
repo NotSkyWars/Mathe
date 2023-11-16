@@ -36,3 +36,14 @@ main input[name="hollow"] {
     border: .2vw solid #1C6EA4;
     transition: .5s;
   }
+
+  #submit-button{
+    padding: 1vh 10% 1vh 10%;
+    background-color: var(--highlight-green);
+    border: .3vw solid none;
+    color: var(--white);
+    border:none;
+    transition: .2s;
+    font-family: 'Roboto', sans-serif;
+        border-radius: 1.5vw 1.5vw 1.5vw;
+  }

@@ -66,6 +66,7 @@ flex-direction: row;
   }
 
   .BR-Math-PickZone{
+    z-index: 0;
     padding:5vh 2vw 2vh 2vw;
     margin: 1vh 20% 2vh 20%;
     background-color: var(--lightes-gray);
@@ -104,6 +105,7 @@ border-radius: 17px;
     margin: .2vh .5vw .2vh .5vw;
     float: left;
     /*margin-left: -2.6vw;*/
+    z-index: 99;
     display: block;
     width: 8vw;
    height: 9.5vh;

@@ -4,7 +4,6 @@ const answers = new Map();
 answers["0"] = "1";
 window.onload = function(){
    this.answers = new Map();
-   document.addEventListener("submit-button").addEventListener("onClick", check());
 }
 
 
