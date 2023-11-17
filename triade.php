@@ -40,6 +40,8 @@
       <span class="br"></span>
       <section class="BR-Math-Title">
         <h1>Triade</Mathespiel></h1>
+        <mn>2</mn>
+        <mn>3</mn>
       </section>
     </main>
     <div class="popup" id="popup1">
@@ -55,9 +57,6 @@
     <div class="submit"><input type="submit" value="Abgeben" id="submit-button" onclick="check()">  </div>
       </section>
         <section class="BR-Math-PickZone" name="BR-Math-Variable" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-        <div class="BR-Math-Variable item-term" name="BR-Math-Variable" id="0" draggable="true" ondragstart="drag(event)"><h1 id="drag1">x^2</h1></div>
-        <div class="BR-Math-Variable item-value" name="BR-Math-Variable" id="1" draggable="true" ondragstart="drag(event)"><h1 id="drag2">x=5</h1></div>
-        <div class="BR-Math-Variable item-answer" name="BR-Math-Variable" id="2" draggable="true" ondragstart="drag(event)"><h1 id="drag3">25</h1></div> 
       </section>
           </section>
     <script src="./jss/triade.js?<?php echo time(); ?>"></script>   

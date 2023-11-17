@@ -1,41 +1,61 @@
-window.onload = function(){
-    var pickzone = document.getElementById("BR-Math-PickZone");
 
-}
 /*
     CHECK - FUNKTION
     In dieser Funktion schaue ich, ob die gegebene Triade richtig ist und erhöhre den Score um einen falls dieser richtig ist.
 
 */
-
 const currentTerms = [];
 const currentValues = [];
+const currentCardsAlive = [0];
+
+
+window.addEventListener("load", (event) => {
+    console.log("page is fully loaded");
+    generateNewTerms(3);
+    console.log(currentCardsAlive[0]);
+  });
+
+
+
 
 const randomRange = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+function removeFromArray(value) {
+ 
+    for(var i = 0; i < currentCardsAlive.length;i++){
+        if(currentCardsAlive[i] != undefined && currentCardsAlive[i] == value.id){
+            currentCardsAlive.splice(i,i);
+            console.log("SPLICED : " + currentCardsAlive[i]);
+        }else if(currentCardsAlive[i] == undefined){
+            currentCardsAlive.splice(i,i);
+        }
+    }
+
+ 
+}
 function check(){
     var dropzones = document.getElementsByClassName("BR-Math-DropZone");
 
     var variable;
     var answer;
     var term;
+
+    var currentTriade = [];
     for(var i = 0; i < dropzones.length;i++){
         var droppedVariable = dropzones[i].childNodes[1];
-        console.log(dropzones[i].childNodes[1]);
-        console.log(dropzones[i].childNodes[1].cloneNode[1]);
-        console.log(i);
         if(droppedVariable.childNodes[0].innerHTML.includes("x=")){
             variable = droppedVariable.childNodes[0].innerHTML.replace("x=","")
-            console.log("variable: " + variable);
+           
         }else if(droppedVariable.childNodes[0].innerHTML.includes("x")){
             term = droppedVariable.childNodes[0].innerHTML;
-            console.log("term: " + term);
-
+            
         }else{
             if(dropzones[i].childNodes[1] != null){
                 answer =droppedVariable.childNodes[0].innerHTML
-                console.log("answer: " + answer);
+               
             }
         }
+
+        currentTriade[i] = droppedVariable;
 
         
 
@@ -44,12 +64,18 @@ function check(){
         for(var i = 0; i < dropzones.length;i++){
         dropzones[i].removeChild(dropzones[i].childNodes[1]);
         }
+        removeFromArray(currentTriade[1]);
+        removeFromArray(currentTriade[0]);
+        removeFromArray(currentTriade[2]);
         console.log("richtig");
-        generateNewTerms();
-    }else{
-        console.log(eval(term.replace("x", variable).replace("^","**")));
-        console.log(term.replace("x", variable).replace("^"," ** ") + ": ss" , term.replace("x",variable).replace("^"," ** "));
+        console.log("CURRENT cards alive : " + currentCardsAlive)
+        console.log(currentCardsAlive.length);
+        if(currentCardsAlive.length == 1 ){
+            generateNewTerms(3);
+            console.log("generate new term");
+        }
     }
+}
 
     /*
 
@@ -57,19 +83,36 @@ function check(){
     In dieser Funktion lasse ich zufällig triaden generieren und ziehe mir eine Lösung aus einer variable und einem zufälligem Term.
 
 */
+const getFontSize = (textLength) => {
+    const baseSize = 9
+    if (textLength >= baseSize) {
+      textLength = baseSize - 2
+    }
+    const fontSize = baseSize - textLength
+    return `${fontSize}rem`
+  }
+var currentCount = 1;
+function generateNewTerms(times){
 
-function generateNewTerms(){
- 
-    createVariable("term", generateTermRandom(),1);
+   for(var i = 0; i < times; i++){
+    createVariable("term", generateTermRandom(),currentCount);
+    currentCount++;
+
     var value = randomRange(2,5);
-    createVariable("value", "x="+value ,2);
+    createVariable("value", "x="+value ,currentCount);
+    currentCount++;
+
+
     currentValues[0] = value;
-    console.log(currentTerms[currentTerms.length-1]);
-    console.log(currentValues[currentValues.length-1]);
 
     var currterm = currentTerms[currentTerms.length-1].replaceAll("x",currentValues[currentValues.length-1]).replace("^","**");
-    console.log(currterm);
-    createVariable("answer", eval(currterm),3);
+    createVariable("answer", eval(currterm),currentCount);
+    currentCount++;
+   }
+   console.log("CURRENT new cards alive : " + currentCardsAlive)
+   if(currentCardsAlive.length >10){
+       console.log("CURRENT new cards alive : " + currentCardsAlive)
+   }
 }
 
 function createVariable(type,value,i){
@@ -80,7 +123,9 @@ function createVariable(type,value,i){
     term.innerHTML = "<h1 id='drag"+i+"'>"+value+"</h1>";
     term.setAttribute("draggable","true");
     term.setAttribute("ondragstart","drag(event)");
+    term.style.fontSize = getFontSize(value);
     document.getElementById("BR-Math-PickZone").appendChild(term);
+    currentCardsAlive[i] = term.id;
 }
 
 function generateTermRandom(){
@@ -130,4 +175,3 @@ function generateTermRandom(){
       return term;
     }
   
-}

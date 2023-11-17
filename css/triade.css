@@ -75,6 +75,8 @@ flex-direction: row;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-wrap: wrap;
   }
 
 .term{
@@ -102,24 +104,23 @@ border-radius: 17px;
 
 .BR-Math-Variable {
     position: relative;
-    margin: .2vh .5vw .2vh .5vw;
+    padding: .2vh 2vw;
     float: left;
     /*margin-left: -2.6vw;*/
     z-index: 99;
     display: block;
-    width: 8vw;
    height: 9.5vh;
     text-align: center;
     background-repeat:no-repeat;
     background-size:contain;
     background-position:center;
     color: var(--white);
+    flex: 0 0 10%;
    /* background-color: var(--light-gray);
     border: .3vw solid var(--dark-gray);
 border-radius: .5vw;*/
 
   }
-
   .item-value{
     background-image: url('media/Frosch.png');
   }
@@ -142,7 +143,7 @@ height: 100%;
 
   .BR-Math-Variable h1{
     font-size: 6vh;
-    
+    width: 100%;
     float: center;
   }
 
@@ -152,8 +153,9 @@ height: 100%;
 @media only screen and (min-width : 992px) {
   .BR-Math-Variable h1{
    height: 125%;
-    font-size: 2rem;
+    font-size: .7rem;
     display: flex;
+    flex-direction: column;
 align-items: center;
 justify-content:center;
   }
