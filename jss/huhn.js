@@ -10,6 +10,7 @@ window.onload = function(){
     document.getElementById('popup2').style.display ='block';
     document.getElementById("score").innerHTML = "";
 }
+
 const read = function(id){
     document.getElementById(id).style.display ='none';
     generateTerm();

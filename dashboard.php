@@ -38,6 +38,12 @@
       <a href="cards.php">Karten</a>
       </section>
     </main>
-    
+    <?php session_start();
+  
+  if(ISSET($_SESSION['username']) && ISSET($_SESSION['password']) && ISSET($_SESSION['lehrer'])){
+    // Schaue ob der Nutzer bereits eingeloggt ist
+  }else{
+    header("Location: selection.php");
+  }?>
   </body>
 </html>

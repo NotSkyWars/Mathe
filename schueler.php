@@ -29,6 +29,7 @@
   <?php
   include('Database.php');
   session_start();
+  
   if(isset($_POST['username'])){
     $db = new Database;
     $db->connect();
@@ -54,5 +55,6 @@
         
        </form>
     </main>
+
   </body>
 </html>

@@ -21,71 +21,10 @@ function allowDrop(ev) {
     }
   }
 
-  var hide = function(id) {
-    document.getElementById('popup1').style.display ='none';
-  }
+  window.addEventListener("load", (event) => {
+    console.log("Innitialising Drag and Drop Lib");
 
-
-
-  window.onload = function() {
-    var isDropping = null
-
-    var dropzones = document.getElementsByClassName('BR-Math-DropZone');
-
-    Array.from(dropzones).forEach(element => {
-      element.addEventListener('touchstart',function(e){
-        if(isDropping != null){
-          if(element.childElementCount < 1 && isDropping != null && element.id != "BR-Math-PickZone"){
-            element.appendChild(isDropping);
-            console.log(isDropping);
-            isDropping = null;
-            console.log(isDropping);
-          }else if(isDropping && isDropping.parentNode   !== element){
-            document.getElementById('popup1').style.display ='block';
-            console.log(isDropping + " DROP ZONE");
-          }
-        }else if(element.hasChildNodes){
-          isDropping = element.firstChild;
-          console.log(isDropping + " CHILD");
-        }
-    });
-    
-    });
-
-    document.getElementById('BR-Math-PickZone').addEventListener('touchstart',function(e){
-      if(isDropping != null){
-        if( isDropping != null){
-          document.getElementById('BR-Math-PickZone').appendChild(isDropping);
-        }else{
-          document.getElementById('popup1').style.display ='block';
-          isDropping = null;
-          console.log(isDropping);
-        }
-      }else if(e != null && e.hasChildNodes){
-        isDropping = e.firstChild;
-        console.log(isDropping + " CHILD");
-      }
   });
-
-
-
-    var variables = document.getElementsByName('BR-Math-Variable');
-    console.log(variables + " sdasda");
-    Array.from(variables).forEach(element => {
-      element.addEventListener('touchstart', function(e) {
-        if(isDropping == null ){
-        isDropping = element;
-        }else{
-          isDropping == null;
-        }
-
-        console.log(element);
-        console.log("sdaads");
-      });
-      console.log(element);
-    });
-    console.log("Loading");
-  }
 
   
   

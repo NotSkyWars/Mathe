@@ -27,7 +27,6 @@
 <span class="underline"></span>
 </header>
   <body>
-  <?php session_start(); ?>
     <main>
     <span class="br"></span>
         <h1>Karte hinzufügen</h1>
@@ -69,6 +68,13 @@
         }
       </script>
     </main>
+    <?php session_start();
+  
+  if(ISSET($_SESSION['username']) && ISSET($_SESSION['password']) && ISSET($_SESSION['lehrer'])){
+    // Schaue ob der Nutzer bereits eingeloggt ist
+  }else{
+    header("Location: selection.php");
+  }?>
     <script src="./jss/card.js?<?php echo time(); ?>"></script> 
   </body>
 </html>
