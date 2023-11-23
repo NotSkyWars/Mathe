@@ -35,7 +35,9 @@
       </section>
       <section class="selection">
       <a href="schueler.php">Schüler hinzufügen</a>
-      <a href="cards.php">Karten</a>
+      <a href="removeschueler.php">Schüler entfernen</a>
+      <a href="addcards.php">Karten hinzufügen</a>
+      <a href="removecards.php">Karten entfernen</a>
       </section>
     </main>
     <?php session_start();

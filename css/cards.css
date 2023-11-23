@@ -54,8 +54,8 @@ main h1{
 }
 .BR-Math-DropZone{
   margin: 1vh 1vw 0 0vw;
-  width: 8vw;
-   height: 10vh;
+  width: 25rem;
+   height: 20rem;
   z-index: 1;
   float:left;
   border: .3vw dashed rgb(191, 195, 201);
@@ -66,6 +66,7 @@ flex-direction: row;
   }
 
   .BR-Math-PickZone{
+    z-index: 0;
     padding:5vh 2vw 2vh 2vw;
     margin: 1vh 20% 2vh 20%;
     background-color: var(--lightes-gray);
@@ -74,6 +75,8 @@ flex-direction: row;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-wrap: wrap;
   }
 
 .term{
@@ -92,7 +95,6 @@ border-radius: 17px;
 }
 
 .BR-Math-DropZone .BR-Math-Variable{
-  margin-left: -0.21vw;
   margin-top: -.3vh;
   z-index: 2;
 }
@@ -101,23 +103,22 @@ border-radius: 17px;
 
 .BR-Math-Variable {
     position: relative;
-    margin: .2vh .5vw .2vh .5vw;
+    
     float: left;
     /*margin-left: -2.6vw;*/
     display: block;
-    width: 8vw;
-   height: 9.5vh;
+   height:10vh;
     text-align: center;
     background-repeat:no-repeat;
     background-size:contain;
     background-position:center;
     color: var(--white);
+    flex: 0 0 30%;
    /* background-color: var(--light-gray);
     border: .3vw solid var(--dark-gray);
 border-radius: .5vw;*/
 
   }
-
   .item-value{
     background-image: url('media/Frosch.png');
   }
@@ -138,23 +139,45 @@ height: 100%;
 */
   }
 
-  .BR-Math-Variable h1{
+  .BR-Math-Variable textarea{
     font-size: 6vh;
-    
+    width: 100%;
     float: center;
+    resize: none;
+    background-color: var(--gray);
+    color: var(--white);
   }
 
 
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-  .BR-Math-Variable h1{
-   height: 125%;
-    font-size: 2rem;
+  .BR-Math-Variable textarea{
+    font-size: 1rem;
+    height: 100%;
     display: flex;
+    flex-direction: column;
 align-items: center;
 justify-content:center;
   }
+
+  .BR-Math-Variable{
+    flex: 0 0 50%;
+    height: 10rem;
+    margin-bottom: 1rem;
+  }
+
+  .BR-Math-DropZone .BR-Math-Variable{
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
 }
 
 @media only screen and (max-width : 992px) {
@@ -163,28 +186,42 @@ justify-content:center;
 align-items: center;
 justify-content: center;
 width: 100%;
-height: 100%;
+height:10vh;
 }
 .BR-Math-PickZone{
   flex-direction: column;
     margin: 1vh 5% 2vh 5%;
 }
 .BR-Math-DropZone{
-  padding: 5vw 6.5vw;
+  /*padding: 5vw 6.5vw;*/
+  position: relative;
+  background-color: var(--light-gray);
+  width: 33%;
 }
 .BR-Math-TermZone{
     margin: 1vh 5% 2vh 5%;
 }
-.BR-Math-Variable h1{
-  padding: 0 2vw 0 2vw;
+.BR-Math-Variable textarea{
+  padding: 1.5vh 2vw ;
+  height: 100%;
   font-size: 1rem;
 }
 
 .BR-Math-DropZone .BR-Math-Variable{
-  margin-left: -3vw;
-  margin-top: -.5vh;
-  width: unset;
-  height: unset;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
   z-index: 2;
 }
 }
+
+sup, sub {
+  position: relative;
+  vertical-align: baseline;
+  top: -0.4em;
+}
+sub { top: 0.4em; }

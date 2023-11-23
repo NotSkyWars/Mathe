@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/buttons.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/navbar.css?<?php echo time(); ?>">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <script src="./jss/cards.js?<?php echo time(); ?>"></script> 
   </head>
   <header>
   <?php session_start();
@@ -46,9 +47,14 @@
 
         ?>
       <section class="BR-Math-Title">
-        <h1>Term</h1>
+        <h1>Cards</h1>
       </section>
     </main>
+    <div class="popup tutorial" id="popup0">
+      <h1>Tutorial</h1>
+      <p>Ziehe die zwei passenden Karten zu einander!</p>
+      <a href="#" onclick="hide('popup0')">Ok!</a>
+    </div>
     <div class="popup" id="popup1">
       <h1>Error</h1>
       <p>Du kannst keine weiteren Antworten in diese "Dropzone" packen!.</p>
@@ -63,8 +69,33 @@
         <div class="submit"><input type="submit" value="Abgeben" id="submit-button" onclick="check()">  </div>
       </section>
         <section class="BR-Math-PickZone" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-<div class="BR-Math-Variable" id="0" draggable="true" type="Frage" ondragstart="drag(event)"><h1 name="Frage" id="drag1">x^2</h1></div>
-<div class="BR-Math-Variable" id="1" draggable="true"  type="Antwort" ondragstart="drag(event)"><h1 name="Antwort" id="drag1">x^2</h1></div>
+<?php 
+
+include "Database.php";
+
+$db = new Database;
+$db->connect();
+
+$list = $db->getCards('7a');
+echo "<script>
+var currentCount = 1;
+var helpme = [];";
+for($i = 0; $i< count($list); $i++){
+  echo "createVariable('Frage','". $list[$i]['FRAGE'] ."',currentCount);
+  currentCount++;";
+  echo "createVariable('Antwort','". $list[$i]['ANTWORT'] ."',currentCount);
+  currentCount++;";
+}
+
+
+
+
+
+echo"</script>";
+
+
+
+?>
        </section>
         </section>
     <div class="popup tutorial" id="popup2">
@@ -72,6 +103,5 @@
       <p>Löse die Gleichung richtig auf! Schiebe hierbei die Karten in das richtige Feld!</p>
       <a href="#" onclick="read('popup2')">Verstanden!</a>
     </div>
-    <script src="./jss/cards.js"></script> 
     <script src="./jss/dragndrop.js"></script> 
   </body>

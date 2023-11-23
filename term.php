@@ -52,9 +52,8 @@
     <section class="BR-Math-TermZone" >
         <section class="term" id="termZone">
        </section> 
-        <div class="submit"><input type="submit" value="Abgeben" onclick="check()">  </div>
+       <div class="submit"><input type="submit" value="Abgeben" id="submit-button" onclick="check()">  </div>
       </section>
-        <section class="BR-Math-PickZone" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
         <?php 
         if(ISSET($_SESSION['login'])){
         }else{
@@ -65,13 +64,12 @@
 
 
 
-       </section>
         </section>
     <div class="popup tutorial" id="popup2">
       <h1>Tutorial</h1>
       <p>Löse die Gleichung richtig auf! Schiebe hierbei die Karten in das richtige Feld!</p>
       <a href="#" onclick="read('popup2')">Verstanden!</a>
     </div>
-        <script src="./jss/term.js"></script> 
+        <script src="./jss/term.js?<?php echo time(); ?>"></script> 
   </body>
 </html>

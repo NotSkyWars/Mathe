@@ -39,10 +39,10 @@
         <textarea  class="answer" name="answer" id="answer" type="text" placeholder="Antwort" required></textarea>
         <select  class="klasse" name="klasse" id="klasse" type="text" placeholder="asdsad" required >
         <option value="0" selected>----------Klassen----------</option>
-        <option value="7">7a</option>
-        <option value="7">7b</option>
-        <option value="7">7OS</option>
-        <option value="7">7OS2</option>
+        <option value="7a">7a</option>
+        <option value="7b">7b</option>
+        <option value="7OS">7OS</option>
+        <option value="7OS2">7OS2</option>
     <option value="8" >8a</option>
     <option value="8" >8b</option>
     <option value="8" >8c</option>
@@ -68,10 +68,20 @@
         }
       </script>
     </main>
-    <?php session_start();
+    <?php 
+    include "Database.php";
+    session_start();
   
   if(ISSET($_SESSION['username']) && ISSET($_SESSION['password']) && ISSET($_SESSION['lehrer'])){
     // Schaue ob der Nutzer bereits eingeloggt ist
+
+    if(isset($_POST['question'])){
+      $db = new Database;
+      $db->connect();
+      $db->addCard($_POST['klasse'],$_POST['question'],$_POST['answer']);
+    }
+    
+  
   }else{
     header("Location: selection.php");
   }?>

@@ -21,40 +21,61 @@ const read = function(id){
 }
 
 const generateRandom = function(){
- var operator = "";
- var canBeX = true;
- 
-   for(var i = 0; i < randomRange(2,6); i++){  
-       if(randomRange(0,2) < 1 && canBeX){
-           term+="x";
-           terms+="x";
-           canBeX = false;
-       } else{
-           canBeX = true;
-           term += operator == ""? "<p>"+randomRange(2,5) +"</p>": "<p>"+ operator+"</p>" +"<p>"+randomRange(2,5) + "</p>";
-           terms += operator == ""? randomRange(2,5):  operator + randomRange(2,5);
-       }
-    switch(randomRange(0,4)){
-        case 4:
-            operator = "/";
-            break;
-        case 3:
-            operator = "*";
-            break;
-        case 2:
-            operator = "-";
-            break;
-        case 1:
-            operator = "+";
-            break;
-        case 0:
-            operator = "^";
-            break;
-            default:
-                operator = "=";
-                break;
-       }
-   }
+    /* Der neue Operator */
+    var operator = "";
+    /* Der letzte Operator */
+    var lasOperator = "";
+    /* Variable, ob der nächste Wert ein X sein kann oder nicht. */
+    var canBeX = true;
+    /* Der neu generierte Term */
+    var term = "";
+    /* Länge des Terms */
+    var length = Math.floor(Math.random() * (5 - 2)) + 2;;
+      for(var i = 0; i < length; i++){  
+          if(randomRange(0,2) < 1 && canBeX){
+            /*  Schauen, ob der Term null ist, wenn es zutrifft ist es nur x, falls nicht ist es mal x. */  
+            term+=term == "" ? "x" : "<p>•</p>x";
+            /*  Der nächste Wert kann nicht X sein. */
+            canBeX = false;
+          } else{
+            /*  Der nächste Wert kann wieder ein X sein. */
+              canBeX = true;
+              /*    Checken, ob der neue Operator eine Potenz ist und ob der letzte Operator eine Potenz war. */
+              if(operator == "^" && lasOperator != null && lasOperator != "^"){
+                /*  Wenn term ist gleich null, dann wenn operator ist gleich null dann eine Zufällige Zahl. Falls Operator ist gleich null dann die Zahl als Potenz */
+                term +=term==""? "<p>"+randomRange(2,5)+"</p>" : operator == ""? "<p>"+randomRange(2,5)+"</p>" : "<sup>"+randomRange(2,5) +"</sup>";
+              }else{
+                if(operator != "^"){
+                    /*  Abfragen, ob der neue Operator keine Potenz ist und danach den Operator mit Zahl hinzufügen.*/
+                    term +=term==""? "<p>"+randomRange(2,5)+"</p>"  : operator == ""? "<p>"+randomRange(2,5)+"</p>" : "<p>+</p>"+"<p>"+randomRange(2,5)+"</p>" ;
+                }
+              }
+          }
+          lasOperator = operator;
+       switch(randomRange(0,4)){
+           case 4:
+               operator = "/";
+               break;
+           case 3:
+               operator = "•";
+               break;
+           case 2:
+               operator = "-";
+               break;
+           case 1:
+               operator = "+";
+               break;
+           case 0:
+               operator = "^";
+               break;
+               default:
+                   operator = "=";
+                   break;
+          }
+      }
+      if(!term.includes("x")){
+        term += "+x";
+      }
 
    const termOut = document.createElement("div");
   // generateRandomAnswers();

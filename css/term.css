@@ -38,7 +38,7 @@ main h1{
   padding: 2vh 2vw 14vh 2vw;
     background-color: var(--lightes-gray);
     border: 5px none var(--lightes-gray);
-    border-radius: 40px 40px 0px 0px;
+    border-radius: 40px 40px 40px 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,18 +55,6 @@ main h1{
   border: .3vw solid var(--highlight-green);
 border-radius: .3vw;
   }
-
-  .BR-Math-PickZone{
-    padding:5vh 2vw 2vh 2vw;
-    margin: 1vh 20% 2vh 20%;
-    background-color: var(--lightes-gray);
-    border: 5px none var(--lightes-gray);
-    border-radius: 0px 0px 40px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
 .term p {
  font-size: 6vh;
  z-index: 2;
@@ -78,49 +66,13 @@ border-radius: .3vw;
  border: 5px none var(--light-gray);
 border-radius: 17px;
 }
-
-.BR-Math-DropZone .BR-Math-Variable{
-  margin-left: -0.21vw;
-  margin-top: -1.3vh;
-  z-index: 2;
-  font-size: 3rem;
+.submit{
+  position: relative;
 }
 
-
-
-.BR-Math-Variable {
-    position: relative;
-    margin: .2vh .5vw .2vh .5vw;
-    float: left;
-    /*margin-left: -2.6vw;*/
-    display: block;
-    width: 6vw;
-   height: 8vh;
-    text-align: center;
-  
-    color: var(--gray);
-    background-color: var(--light-gray);
-    border: .3vw solid var(--dark-gray);
-border-radius: .5vw;
-
-  }
-.decor-border{
-  width: .5vw;
-  height: 7vh;
-  float: left;
+#submit-button{
 }
-  .BR-Math-Variable-decor{
-    border: .3vw solid var(--dark-gray);
-    background-color: var(--dark-gray);
-height: 100%;
 
-  }
-
-  .BR-Math-Variable h1{
-    font-size: 6vh;
-    
-    float: center;
-  }
 
   /* Custom, iPhone Retina */ 
 @media only screen and (min-width : 320px) {
@@ -183,3 +135,19 @@ justify-content: center;
 @media only screen and (min-width : 1200px) {
 
 }
+
+sup, sub {
+  position: relative;
+  vertical-align: baseline;
+  top: -0.4em;
+  font-size: 5vh;
+  z-index: 2;
+  float: left;
+  padding: .5vh 1vw .5vh 1vw;
+  margin: 0 .5vw 0 0;
+  color: var(--gray);
+  background-color: var(--light-gray);
+  border: 5px none var(--light-gray);
+ border-radius: 17px;
+}
+sub { top: 0.4em; }
