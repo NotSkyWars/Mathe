@@ -1,5 +1,6 @@
 var term = "";
 var terms ="";
+var answer = 0;
 var id = 0;
 
 
@@ -12,14 +13,52 @@ window.onload = function(){
 }
 
 const check = async () => {
-    console.log("asdad");
+    var dropzones = document.getElementsByClassName("BR-Math-DropZone");
+    var variables = [];
+
+    var currentTriade = [];
+    for(var i = 0; i < dropzones.length;i++){
+        var droppedVariable = dropzones[i];
+        if(droppedVariable != undefined){
+        
+            variables[i] = droppedVariable.value;
+            console.log(droppedVariable.value);
+        
+        }
+console.log(variables);
+console.log("vars ");
+    }
+    if(variables != undefined){
+        var termeval = formatTerm(term);
+        console.log(termeval);
+        console.log("Check 1");
+        for(var i = 0;i < variables.length;i++){
+            termeval = termeval.replace("x",variables[i]);
+        }
+        console.log("term = ");
+        console.log(termeval);
+    if(eval(termeval)== this.answer){
+        for(var i = 0; i < dropzones.length;i++){
+        dropzones[i].remove;
+        }
+        
+       // this.score+= 1;
+        //document.getElementById("score").innerHTML = "Score: " +this.score; 
+        console.log("richtig");
+        document.getElementById("termZone").innerHTML ="";
+            generateRandom();   
+
+    }else{
+        resetGame();
+    }
+}
 }
 
 const read = function(id){
     document.getElementById(id).style.display ='none';
     document.getElementById("game").style.display = "block";
 }
-
+const randomRange = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 const generateRandom = function(){
     /* Der neue Operator */
     var operator = "";
@@ -43,11 +82,11 @@ const generateRandom = function(){
               /*    Checken, ob der neue Operator eine Potenz ist und ob der letzte Operator eine Potenz war. */
               if(operator == "^" && lasOperator != null && lasOperator != "^"){
                 /*  Wenn term ist gleich null, dann wenn operator ist gleich null dann eine Zufällige Zahl. Falls Operator ist gleich null dann die Zahl als Potenz */
-                term +=term==""? "<p>"+randomRange(2,5)+"</p>" : operator == ""? "<p>"+randomRange(2,5)+"</p>" : "<sup>"+randomRange(2,5) +"</sup>";
+                term +=term==""? "<p>"+randomRange(1,10)+"</p>" : operator == ""? "<p>"+randomRange(1,10)+"</p>" : "<sup>"+randomRange(1,2) +"</sup>";
               }else{
                 if(operator != "^"){
                     /*  Abfragen, ob der neue Operator keine Potenz ist und danach den Operator mit Zahl hinzufügen.*/
-                    term +=term==""? "<p>"+randomRange(2,5)+"</p>"  : operator == ""? "<p>"+randomRange(2,5)+"</p>" : "<p>+</p>"+"<p>"+randomRange(2,5)+"</p>" ;
+                    term +=term==""? "<p>"+randomRange(1,10)+"</p>"  : operator == ""? "<p>"+randomRange(1,10)+"</p>" : "<p>+</p>"+"<p>"+randomRange(1,10)+"</p>" ;
                 }
               }
           }
@@ -73,16 +112,23 @@ const generateRandom = function(){
                    break;
           }
       }
-      if(!term.includes("x")){
-        term += "+x";
+      if(!term.includes("x")){    
+        term += "<p>+</p>x";
       }
+      this.term = term;
 
    const termOut = document.createElement("div");
+   console.log(formatTerm(term.replaceAll("x",randomRange(2,5))));  
+   this.answer = eval(formatTerm(term.replaceAll("x",randomRange(2,5))));
   // generateRandomAnswers();
-   termOut.innerHTML = (term + "<p>=</p><p>" + Math.floor(Math.random() * Math.floor(Math.random() * 100)) + "</p>").replaceAll("x", "<input class='BR-Math-DropZone'> </div>");
+   termOut.innerHTML = (term + "<p>=</p><p>" + this.answer + "</p>").replaceAll("x", "<input class='BR-Math-DropZone'> </div>");
    document.getElementById('termZone').appendChild(termOut);
    console.log(term + " d");
    console.log(terms);
+}
+
+function formatTerm(term){
+    return term.replaceAll("•","*").replaceAll("<sup>","**").replaceAll("</sup>","").replaceAll("<p>","").replaceAll("</p>","");
 }
 /*
 const generateRandomAnswers = function(){
@@ -102,7 +148,7 @@ const generateRandomAnswers = function(){
 }
 */
 
-const randomRange = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+
 
 function countInstances(string, word) {
     console.log((string.match("/"+word+"/g") || []).length);
