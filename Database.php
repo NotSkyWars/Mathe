@@ -105,6 +105,7 @@ class Database{
             if($password == $this->get("PASSWORD","NAME",$name)){
                 $_SESSION['username'] = $name;
                 $_SESSION['password'] = $password;
+                $_SESSION['KLASSE'] = $this->get("KLASSE","NAME",$name);
                if($this->get("LEHRER","NAME",$name) == "Lehrer"){
                 $_SESSION['lehrer'] = true;
                }

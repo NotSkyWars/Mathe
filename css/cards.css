@@ -75,7 +75,6 @@ flex-direction: row;
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex-wrap: wrap;
   }
 
@@ -106,7 +105,6 @@ border-radius: 17px;
     
     float: left;
     /*margin-left: -2.6vw;*/
-    display: block;
    height:10vh;
     text-align: center;
     background-repeat:no-repeat;
@@ -114,6 +112,9 @@ border-radius: 17px;
     background-position:center;
     color: var(--white);
     flex: 0 0 30%;
+    background-color: var(--gray);
+    border-radius: .3vw;
+
    /* background-color: var(--light-gray);
     border: .3vw solid var(--dark-gray);
 border-radius: .5vw;*/
@@ -141,11 +142,17 @@ height: 100%;
 
   .BR-Math-Variable textarea{
     font-size: 6vh;
-    width: 100%;
+    width: 90%;
     float: center;
     resize: none;
-    background-color: var(--gray);
     color: var(--white);
+    background-color: rgba(0, 0, 0, 0);
+    border:none;
+    margin: .3rem 5%;
+  }
+
+  .BR-Math-PickZone .BR-Math-Variable{
+    margin: 1rem;
   }
 
 
@@ -162,7 +169,7 @@ justify-content:center;
   }
 
   .BR-Math-Variable{
-    flex: 0 0 50%;
+    flex: 0 0 40%;
     height: 10rem;
     margin-bottom: 1rem;
   }

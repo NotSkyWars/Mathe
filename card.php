@@ -25,7 +25,6 @@
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <nav>
           <ul>
-          <li><a href="klassen.php">Klassen</a></li>
             <li><a href="selection.php">Spielmodi</a></li>
             <li><a href="faq.php">FaQ</a></li>
             <li><form action="login.php" method="post" ><input type="submit" name="signout" id="signout" value="Abmelden"></form></li>
@@ -60,7 +59,9 @@
       <p>Du kannst keine weiteren Antworten in diese "Dropzone" packen!.</p>
       <a href="#" onclick="hide('popup1')">Ok!</a>
     </div>
+    <h2 id="score">Score: </h2>
     <section class="game" id="game">
+      
     <section class="BR-Math-TermZone" >
     <section class="term">
         <div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
@@ -76,7 +77,7 @@ include "Database.php";
 $db = new Database;
 $db->connect();
 
-$list = $db->getCards('7a');
+$list = $db->getCards($_SESSION['KLASSE']);
 echo "<script>
 var currentCount = 1;
 var helpme = [];";
@@ -86,9 +87,6 @@ for($i = 0; $i< count($list); $i++){
   echo "createVariable('Antwort','". $list[$i]['ANTWORT'] ."',currentCount);
   currentCount++;";
 }
-
-
-
 
 
 echo"</script>";

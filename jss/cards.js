@@ -4,6 +4,10 @@
 var cards = [];
 let answers = new Map();
 var selectedItem = null;
+var score = 0;
+var cardsAlive = 0;
+var lastCard = 0;
+var newBegin = false;
 window.onload = function(){
    this.answers = new Map();
 }
@@ -40,14 +44,12 @@ window.addEventListener("load", (event) => {
         selectedItem = e.firstChild;
         console.log(selectedItem + " CHILD");
       }});
+      cards.shift();
  });
 
 
 
 function check(){
-    console.log("Vars");
-    console.log(cards);
-    console.log(answers);
     var dropzones = document.getElementsByClassName("BR-Math-DropZone");
     var frage;
     var antwort;
@@ -55,23 +57,32 @@ function check(){
         console.log(dropzones[i].childNodes[1].getAttribute("type"));
         if(dropzones[i].childNodes[1].getAttribute("type").includes("Frage")){
             frage = dropzones[i].childNodes[1].id;
-            console.log("Frage: " + frage);
         }else{
             if(dropzones[i].childNodes[1] != null){
                 antwort = dropzones[i].childNodes[1].id;
-                console.log("answer: " + antwort);
             }
         }
     }
-    console.log(frage);
-    console.log(antwort);
-    console.log(answers);
-    console.log(answers.get(frage + ""));
     if(answers.get(frage) == antwort){
         for(var i = 0; i < dropzones.length;i++){
         dropzones[i].removeChild(dropzones[i].childNodes[1]);
         }
+        this.score+= 1;
+        document.getElementById("score").innerHTML = "Score: " +this.score; 
         console.log("richtig");
+        cardsAlive-= 2;
+        console.log(cardsAlive + " CARDS ALIVE");
+        if(cardsAlive == 0){
+          if(!newBegin){
+            lastCard = lastCard+4;
+            console.log("NOT A RESERT");
+          }else{
+            newBegin = false;
+            lastCard = 0;
+            console.log("A RESERT");
+          }
+          addToGame();
+        }
     }else{
         console.log("Falsch");
     }
@@ -85,7 +96,9 @@ hide(id)
 var hide = function(id) {
     document.getElementById(id).style.display ='none';
    if(id == 'popup0'){
+    addToGame();
   document.getElementById("score").innerHTML = "Score: " +this.score; 
+
    }else if(id == "popup2"){
     location.reload();
    }
@@ -112,12 +125,36 @@ function createVariable(type,value,id){
             selectedItem == null;
         }
 
-        console.log(term);
-        console.log("is touched");
       });
       cards[id] = term;
       if(type == "Frage"){
         answers.set(id + "",id+1);
       }
-    document.getElementById("BR-Math-PickZone").appendChild(term);
+    cards.push(term);
+    console.log(cards);
+}
+
+
+function addToGame(){
+  for(var i = 0; i< 4; i++){
+    var card = cards[i+lastCard];
+    if (card != undefined){
+      document.getElementById("BR-Math-PickZone").appendChild(card);
+  this.cardsAlive++;
+    console.log("ADDED CARD");
+  }else{
+    newBegin = true;
+    console.log("bewe vasd");
+  }
+  }
+
+  if(newBegin){ 
+    document.getElementById("BR-Math-PickZone").appendChild(cards[0]);
+  document.getElementById("BR-Math-PickZone").appendChild(cards[1]);
+  this.cardsAlive++;
+}
+  var elements = document.getElementById("BR-Math-PickZone").children;
+  for (var i = elements.length; i >= 0; i--) {
+   document.getElementById("BR-Math-PickZone").appendChild(elements[Math.random() * i | 0]);
+  }
 }
