@@ -140,15 +140,36 @@ height: 100%;
 */
   }
 
-  .BR-Math-Variable textarea{
+  .BR-Math-Variable textarea {
     font-size: 6vh;
     width: 90%;
     float: center;
     resize: none;
     color: var(--white);
-    background-color: rgba(0, 0, 0, 0);
     border:none;
     margin: .3rem 5%;
+  }
+
+  #score{
+    margin: 0 50rem;
+    margin-top: -10rem;
+    height: 10rem;
+    font-size: 4vh;
+    display: flex;
+    flex-direction: column;
+align-items: center;
+justify-content:center;
+    color: var(--white);
+    background-color: var(--gray);
+    border-radius: 2rem;
+  }
+
+  .item-frage{
+    background-color: rgb(77, 206, 45);
+  }
+
+  .item-antwort{
+    background-color: rgb(206, 150, 45);
   }
 
   .BR-Math-PickZone .BR-Math-Variable{

@@ -41,6 +41,7 @@
       <section class="BR-Math-Title">
         <h1>Term</Mathespiel></h1>
       </section>
+      <h2 id="score">Score: </h2>
     </main>
     <div class="popup" id="popup1">
       <h1>Error</h1>

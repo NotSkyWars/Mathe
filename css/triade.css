@@ -33,6 +33,20 @@ main h1{
   text-decoration: var(--highlight-green) underline .5vh;
 }
 
+
+#score{
+  margin: 0 50rem;
+  margin-top: -10rem;
+  height: 5rem;
+  font-size: 4vh;
+  display: flex;
+  flex-direction: column;
+align-items: center;
+justify-content:center;
+  color: var(--white);
+  background-color: var(--gray);
+  border-radius: 2rem;
+}
 .BR-Math-TermZone{
   margin: 10vh 20% 1vh 20%;
   padding: 2vh 2vw 6vh 2vw;
@@ -200,6 +214,9 @@ height:10vh;
 }
 .BR-Math-TermZone{
     margin: 1vh 5% 2vh 5%;
+}
+#score{
+  margin:0;
 }
 .BR-Math-Variable h1{
   padding: 1.5vh 2vw ;

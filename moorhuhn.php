@@ -41,7 +41,7 @@
         
       </section>
     </main>
-    <section class="score" id="score">Score: 0</section>
+    <h2 id="score">Score: </h2>
     <section id="term" class="term">
 </section> 
     <section class="game">

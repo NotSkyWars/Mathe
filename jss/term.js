@@ -2,6 +2,7 @@ var term = "";
 var terms ="";
 var answer = 0;
 var id = 0;
+var score = 0;
 
 
 window.onload = function(){
@@ -25,26 +26,19 @@ const check = async () => {
             console.log(droppedVariable.value);
         
         }
-console.log(variables);
-console.log("vars ");
     }
     if(variables != undefined){
         var termeval = formatTerm(term);
-        console.log(termeval);
-        console.log("Check 1");
         for(var i = 0;i < variables.length;i++){
             termeval = termeval.replace("x",variables[i]);
         }
-        console.log("term = ");
-        console.log(termeval);
     if(eval(termeval)== this.answer){
         for(var i = 0; i < dropzones.length;i++){
         dropzones[i].remove;
         }
         
-       // this.score+= 1;
-        //document.getElementById("score").innerHTML = "Score: " +this.score; 
-        console.log("richtig");
+       this.score+= 1;
+        document.getElementById("score").innerHTML = "Score: " +this.score; 
         document.getElementById("termZone").innerHTML ="";
             generateRandom();   
 
@@ -82,7 +76,7 @@ const generateRandom = function(){
               /*    Checken, ob der neue Operator eine Potenz ist und ob der letzte Operator eine Potenz war. */
               if(operator == "^" && lasOperator != null && lasOperator != "^"){
                 /*  Wenn term ist gleich null, dann wenn operator ist gleich null dann eine Zufällige Zahl. Falls Operator ist gleich null dann die Zahl als Potenz */
-                term +=term==""? "<p>"+randomRange(1,10)+"</p>" : operator == ""? "<p>"+randomRange(1,10)+"</p>" : "<sup>"+randomRange(1,2) +"</sup>";
+                term +=term==""? "<p>"+randomRange(1,10)+"</p>" : operator == ""? "<p>"+randomRange(1,10)+"</p>" : "<sup>"+2 +"</sup>";
               }else{
                 if(operator != "^"){
                     /*  Abfragen, ob der neue Operator keine Potenz ist und danach den Operator mit Zahl hinzufügen.*/
@@ -120,36 +114,13 @@ const generateRandom = function(){
    const termOut = document.createElement("div");
    console.log(formatTerm(term.replaceAll("x",randomRange(2,5))));  
    this.answer = eval(formatTerm(term.replaceAll("x",randomRange(2,5))));
-  // generateRandomAnswers();
    termOut.innerHTML = (term + "<p>=</p><p>" + this.answer + "</p>").replaceAll("x", "<input class='BR-Math-DropZone'> </div>");
    document.getElementById('termZone').appendChild(termOut);
-   console.log(term + " d");
-   console.log(terms);
 }
 
 function formatTerm(term){
     return term.replaceAll("•","*").replaceAll("<sup>","**").replaceAll("</sup>","").replaceAll("<p>","").replaceAll("</p>","");
 }
-/*
-const generateRandomAnswers = function(){
-    var canbeAnswer =true;
-    var random = [Math.floor(Math.random() * Math.floor(Math.random() * 100)),Math.floor(Math.random() * Math.floor(Math.random() * 100)),Math.floor(Math.random() * Math.floor(Math.random() * 100))]
-    for(var i = 0 ; i < countInstances(term, "x",true) + 6; i ++){
-        const aOutput = document.createElement("div");
-        aOutput.id = id;
-        console.log("idsa");
-        id++;
-        aOutput.className = "BR-Math-Variable";
-        aOutput.draggable = "true";
-        aOutput.setAttribute ("ondragstart","drag(event)");
-       aOutput.innerHTML = '<div class="decor-border"><div class="BR-Math-Variable-decor"></div></div><h1 id="drag1">'+Math.floor(Math.random() * Math.floor(Math.random() * 100))+'</h1>';
-        document.getElementById('BR-Math-PickZone').appendChild(aOutput);
-    }
-}
-*/
-
-
-
 function countInstances(string, word) {
     console.log((string.match("/"+word+"/g") || []).length);
     return string.split(word).length+2;

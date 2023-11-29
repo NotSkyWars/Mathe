@@ -32,8 +32,9 @@
       <span class="br"></span>
       <section class="BR-Math-Title">
         <h1>Triade</Mathespiel></h1>
-        <h2 id="score">Score: </h2>
+        
       </section>
+      <h2 id="score">Score: </h2>
     </main>
     <!--- 
     

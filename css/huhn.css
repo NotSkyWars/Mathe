@@ -65,6 +65,18 @@ button{
     justify-content: center;
     margin-top: 2vh;
 }
+#score{
+  margin: 0 50rem;
+  height: 5rem;
+  font-size: 4vh;
+  display: flex;
+  flex-direction: column;
+align-items: center;
+justify-content:center;
+  color: var(--white);
+  background-color: var(--gray);
+  border-radius: 2rem;
+}
 
 
 @media only screen and (max-width : 992px) {
@@ -72,8 +84,8 @@ button{
     font-size: 2rem;
   }
 
-  .score{
-    font-size: 1rem;
+  #score{
+    margin:0;
   }
   .br{
     height: 10rem;

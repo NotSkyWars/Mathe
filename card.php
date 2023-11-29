@@ -70,6 +70,7 @@
         <div class="submit"><input type="submit" value="Abgeben" id="submit-button" onclick="check()">  </div>
       </section>
         <section class="BR-Math-PickZone" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+        <textarea class="BR-Math-Variable antwort" >asdasdasdsad</textarea>
 <?php 
 
 include "Database.php";

@@ -33,6 +33,20 @@ main h1{
   text-decoration: var(--highlight-green) underline .5vh;
 }
 
+#score{
+  margin: 0 50rem;
+  margin-top: -10rem;
+  height: 5rem;
+  font-size: 4vh;
+  display: flex;
+  flex-direction: column;
+align-items: center;
+justify-content:center;
+  color: var(--white);
+  background-color: var(--gray);
+  border-radius: 2rem;
+}
+
 .BR-Math-TermZone{
   margin: 10vh 20% 1vh 20%;
   padding: 7vh 2vw 5vh 2vw;
@@ -41,16 +55,23 @@ main h1{
     border-radius: 40px 40px 40px 40px;
 }
 .BR-Math-DropZone{
-  margin: 1vh 1vw 0 0vw;
+  margin: 0vh 1vw 0 0vw;
   width: 6vw;
-  height: 7.5vh;
+  text-align: center;
+  height: 9vh;
   z-index: 1;
   float:left;
-  font-size: 6vh;
-  color: var(--gray);
-  background-color: var(--light-gray);
+  font-size: 5vh;
+  color: var(--white);
+  background-color: var(--highlight-green);
   border: .3vw solid var(--highlight-green);
-border-radius: .3vw;
+border-radius: 1rem;
+transition: .5s;
+  }
+
+  .BR-Math-DropZone:focus{
+    outline: none;
+    transform: scale(1.2);
   }
 .term p {
  font-size: 6vh;
@@ -61,7 +82,7 @@ border-radius: .3vw;
  color: var(--gray);
  background-color: var(--light-gray);
  border: 5px none var(--light-gray);
-border-radius: 17px;
+border-radius: 1rem;
 }
 
 .term{
@@ -78,34 +99,8 @@ border-radius: 17px;
 }
 
 
-  /* Custom, iPhone Retina */ 
-@media only screen and (min-width : 320px) {
-  .BR-Math-Variable h1 {
-    font-size: 5vw;
-}
-  .decor-border{
-    height: 7.5vh;
-  }
-      
-}
 
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
-  .BR-Math-Variable {
-      font-size: 1vw;
-  }
-  .decor-border{
-    height: 7.5vh;
-  }
-}
 
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
-  .decor-border{
-    height: 7.5vh;
-  }
-
-}
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
@@ -130,15 +125,22 @@ justify-content: center;
 align-items: center;
 justify-content: center;
 }
-.BR-Math-Variable h1{
-  padding: 0 2vw 0 2vw;
+.BR-Math-TermZone{
+  width:100%;
+  margin: 2rem 0;
+}
+
+.BR-Math-DropZone{
+  width: 4rem;
+}
+  .term p{
+  padding:0  .5rem;
+}
+#score{
+  margin:0;
 }
 }
 
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-
-}
 
 sup, sub {
   position: relative;
