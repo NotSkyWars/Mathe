@@ -30,7 +30,7 @@ main{
 
 main h1{
   font-size: 7vw;
-  text-decoration: var(--highlight-green) underline .5vh;
+  text-decoration: var(--highlight-red2) underline .5vh;
 }
 
 .BR-Math-TermZone{
@@ -114,6 +114,7 @@ border-radius: 17px;
     flex: 0 0 30%;
     background-color: var(--gray);
     border-radius: .3vw;
+    font-size: 2rem;
 
    /* background-color: var(--light-gray);
     border: .3vw solid var(--dark-gray);
