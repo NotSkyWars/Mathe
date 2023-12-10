@@ -121,25 +121,6 @@ border-radius: 17px;
 border-radius: .5vw;*/
 
   }
-  .item-value{
-    background-image: url('media/Frosch.png');
-  }
-  .item-term{
-    background-image: url('media/Tiger.png');
-  }
-  .item-answer{
-    background-image: url('media/kuh.png');
-  }
-.decor-border{
-  width: .5vw;
-  float: left;
-}
-  .BR-Math-Variable-decor{
-   /* border: .3vw solid var(--dark-gray);
-    background-color: var(--dark-gray);
-height: 100%;
-*/
-  }
 
   .BR-Math-Variable textarea {
     font-size: 6vh;
@@ -149,6 +130,7 @@ height: 100%;
     color: var(--white);
     border:none;
     margin: .3rem 5%;
+    background-color: rgba(0, 0, 0, 0);
   }
 
   #score{
@@ -165,11 +147,11 @@ justify-content:center;
     border-radius: 2rem;
   }
 
-  .item-frage{
+  .item-Frage{
     background-color: rgb(77, 206, 45);
   }
 
-  .item-antwort{
+  .item-Antwort{
     background-color: rgb(206, 150, 45);
   }
 

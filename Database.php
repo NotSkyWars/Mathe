@@ -7,7 +7,7 @@ class Database{
         $this->createDatabase();
     }
     public function getConnection(){
-        $file = json_decode(file_get_contents("config.json"),true);
+        $file = json_decode(file_get_contents("config.config"),true);
         $this->con = new PDO("mysql:host=". $file['database'] .";dbname=". $file['tablename'] ."",$file['name'], $file['password']);
     }
     public function exists(string $name):bool{
@@ -98,6 +98,10 @@ class Database{
     private function createDatabase(){
         $this->con->prepare("CREATE TABLE IF NOT EXISTS `nutzer` ( `NID` INT NOT NULL , `NAME` Text NOT NULL , `PASSWORD` TEXT NOT NULL, `KLASSE` TEXT NOT NULL, `LEHRER` TEXT NOT NULL, PRIMARY KEY(`NID`) );")->execute();
         $this->con->prepare("CREATE TABLE IF NOT EXISTS `cards` ( `CID` INT NOT NULL , `KLASSE` Text NOT NULL , `FRAGE` TEXT NOT NULL, `ANTWORT` TEXT NOT NULL, PRIMARY KEY(`CID`) );")->execute();
+        if(!$this->exists("admin")){
+            $file = json_decode(file_get_contents("config.config"),true);
+            $this->con->prepare("INSERT INTO `nutzer`(`NID`, `NAME`, `PASSWORD`, `KLASSE`, `LEHRER`) VALUES (0,'". $file['adminname'] ."','". $file['adminpassword'] ."','7a','Lehrer');")->execute();
+        }
     }
 
     public function validateUser(string $name, string $password){
@@ -115,7 +119,7 @@ class Database{
                 echo '    <div class="popup loginfehler" id="popup2" style="display:block;">
                 <h1>Loginfehler</h1>
                 <p>Schaue, ob das Passwort und der Nutzername übereinstimmt! </p>
-                <a href="#" onclick="  document.getElementById(this).style.display ="none";">Verstanden!</a>
+                <a href="#" onclick="hide();">Verstanden!</a>
               </div>';
             }
         }else{

@@ -12,7 +12,6 @@ Beim Laden des Fensters das Tutorial Popup sichtbar machen und eine Rückmeldung
   
   window.addEventListener("load", (event) => {
     document.getElementById('popup0').style.display ='block';
-    console.log("page is fully loaded");
     var dropzones = document.getElementsByClassName('BR-Math-DropZone');
 
     Array.from(dropzones).forEach(element => {
@@ -36,11 +35,9 @@ Beim Laden des Fensters das Tutorial Popup sichtbar machen und eine Rückmeldung
         }else{
           document.getElementById('popup1').style.display ='block';
           selectedItem = null;
-          console.log(selectedItem);
         }
       }else if(e != null && e.hasChildNodes){
         selectedItem = e.firstChild;
-        console.log(selectedItem + " CHILD");
       }});
  });
 
@@ -53,7 +50,6 @@ hide(id)
     document.getElementById(id).style.display ='none';
    if(id == 'popup0'){
   generateNewTerms(3);
-  console.log(currentCardsAlive[0]);
   document.getElementById("score").innerHTML = "Score: " +this.score; 
    }else if(id == "popup2"){
     location.reload();
@@ -200,9 +196,6 @@ function createVariable(type,value,i){
         }else{
             selectedItem == null;
         }
-
-        console.log(term);
-        console.log("is touched");
       });
     document.getElementById("BR-Math-PickZone").appendChild(term);
     currentCardsAlive[i] = term.id;

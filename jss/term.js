@@ -6,28 +6,29 @@ var score = 0;
 
 
 window.onload = function(){
-    var pickzone = document.getElementById("BR-Math-PickZone");
     document.getElementById("popup2").style.display ='block';
     document.getElementById("game").style.display = "none";
     generateRandom();
 
 }
+function isNumber(value) {
+    for(var i = 0; i < value.length; i++){
+        if(isNaN(value[i]))
+        return false;
+    }
+    return true;
+  }
 
 const check = async () => {
     var dropzones = document.getElementsByClassName("BR-Math-DropZone");
     var variables = [];
-
-    var currentTriade = [];
     for(var i = 0; i < dropzones.length;i++){
         var droppedVariable = dropzones[i];
         if(droppedVariable != undefined){
-        
             variables[i] = droppedVariable.value;
-            console.log(droppedVariable.value);
-        
         }
     }
-    if(variables != undefined){
+    if(variables != undefined && isNumber(variables)){
         var termeval = formatTerm(term);
         for(var i = 0;i < variables.length;i++){
             termeval = termeval.replace("x",variables[i]);
@@ -45,11 +46,14 @@ const check = async () => {
     }else{
         resetGame();
     }
+}else{
+    document.getElementById("popup4").style.display ='block';
 }
 }
 
 const read = function(id){
     document.getElementById(id).style.display ='none';
+    if(id == "popup2")
     document.getElementById("game").style.display = "block";
 }
 const randomRange = (min, max) => Math.floor(Math.random() * (max - min)) + min;
@@ -112,7 +116,6 @@ const generateRandom = function(){
       this.term = term;
 
    const termOut = document.createElement("div");
-   console.log(formatTerm(term.replaceAll("x",randomRange(2,5))));  
    this.answer = eval(formatTerm(term.replaceAll("x",randomRange(2,5))));
    termOut.innerHTML = (term + "<p>=</p><p>" + this.answer + "</p>").replaceAll("x", "<input class='BR-Math-DropZone'> </div>");
    document.getElementById('termZone').appendChild(termOut);
@@ -121,7 +124,3 @@ const generateRandom = function(){
 function formatTerm(term){
     return term.replaceAll("•","*").replaceAll("<sup>","**").replaceAll("</sup>","").replaceAll("<p>","").replaceAll("</p>","");
 }
-function countInstances(string, word) {
-    console.log((string.match("/"+word+"/g") || []).length);
-    return string.split(word).length+2;
- }

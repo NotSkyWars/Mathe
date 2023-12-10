@@ -14,7 +14,6 @@ window.onload = function(){
 
 window.addEventListener("load", (event) => {
     document.getElementById('popup0').style.display ='block';
-    console.log("page is fully loaded");
     var dropzones = document.getElementsByClassName('BR-Math-DropZone');
 
     Array.from(dropzones).forEach(element => {
@@ -38,13 +37,12 @@ window.addEventListener("load", (event) => {
         }else{
           document.getElementById('popup1').style.display ='block';
           selectedItem = null;
-          console.log(selectedItem);
         }
       }else if(e != null && e.hasChildNodes){
         selectedItem = e.firstChild;
-        console.log(selectedItem + " CHILD");
       }});
       cards.shift();
+      cards.pop();
  });
 
 
@@ -69,22 +67,16 @@ function check(){
         }
         this.score+= 1;
         document.getElementById("score").innerHTML = "Score: " +this.score; 
-        console.log("richtig");
+        console.log("richtig " + cardsAlive);
         cardsAlive-= 2;
-        console.log(cardsAlive + " CARDS ALIVE");
         if(cardsAlive == 0){
-          if(!newBegin){
+            console.log(lastCard);
             lastCard = lastCard+4;
-            console.log("NOT A RESERT");
-          }else{
-            newBegin = false;
-            lastCard = 0;
-            console.log("A RESERT");
-          }
+            console.log("NOT A RESERT + " + lastCard);
           addToGame();
         }
     }else{
-        console.log("Falsch");
+        document.getElementById("popup2").style.display = "block";
     }
 }
 
@@ -131,7 +123,6 @@ function createVariable(type,value,id){
         answers.set(id + "",id+1);
       }
     cards.push(term);
-    console.log(cards);
 }
 
 
@@ -141,18 +132,19 @@ function addToGame(){
     if (card != undefined){
       document.getElementById("BR-Math-PickZone").appendChild(card);
   this.cardsAlive++;
-    console.log("ADDED CARD");
   }else{
     newBegin = true;
-    console.log("bewe vasd");
+    lastCard = 0;
+    i = 4;
   }
   }
-
-  if(newBegin){ 
+  if(newBegin){
     document.getElementById("BR-Math-PickZone").appendChild(cards[0]);
-  document.getElementById("BR-Math-PickZone").appendChild(cards[1]);
-  this.cardsAlive++;
-}
+    document.getElementById("BR-Math-PickZone").appendChild(cards[1]);
+    document.getElementById("BR-Math-PickZone").appendChild(cards[2]);
+    document.getElementById("BR-Math-PickZone").appendChild(cards[3]);
+    this.cardsAlive +=2;
+  }
   var elements = document.getElementById("BR-Math-PickZone").children;
   for (var i = elements.length; i >= 0; i--) {
    document.getElementById("BR-Math-PickZone").appendChild(elements[Math.random() * i | 0]);

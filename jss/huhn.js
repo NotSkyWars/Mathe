@@ -74,7 +74,6 @@ const removeBirds = async () => {
     const generateBirds = async () => {
         var stop = randomRange(3,6);
         var generate = randomRange(0, stop+3);
-        console.log(generate +":" + stop);
         for(var i  = 1; i <stop; i++){
                 if(generate-3 == i){generateTerm();}
             const bird = document.createElement("button");
@@ -87,12 +86,7 @@ const removeBirds = async () => {
             //add random results
             bird.innerHTML = Math.floor(Math.random() * Math.floor(Math.random() * 100) + (times * 10))
             
-            bird.addEventListener("click", (event) => {
-                console.log("asdasd");
-
-                    resetGame();
-
-              });
+            bird.addEventListener("click", (event) => {  resetGame(); });
 
             document.getElementsByClassName("game")[0].appendChild(bird);
           

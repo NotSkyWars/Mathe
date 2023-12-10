@@ -59,6 +59,11 @@
       <p>Du kannst keine weiteren Antworten in diese "Dropzone" packen!.</p>
       <a href="#" onclick="hide('popup1')">Ok!</a>
     </div>
+    <div class="popup" id="popup2">
+      <h1>Error</h1>
+      <p>Die beiden Karten passen nicht zusammen!</p>
+      <a href="#" onclick="hide('popup2')">Ok!</a>
+    </div>
     <h2 id="score">Score: </h2>
     <section class="game" id="game">
       
@@ -70,7 +75,6 @@
         <div class="submit"><input type="submit" value="Abgeben" id="submit-button" onclick="check()">  </div>
       </section>
         <section class="BR-Math-PickZone" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-        <textarea class="BR-Math-Variable antwort" >asdasdasdsad</textarea>
 <?php 
 
 include "Database.php";
@@ -85,6 +89,7 @@ var helpme = [];";
 for($i = 0; $i< count($list); $i++){
   echo "createVariable('Frage','". $list[$i]['FRAGE'] ."',currentCount);
   currentCount++;";
+  echo "console.log('". $i ."');";
   echo "createVariable('Antwort','". $list[$i]['ANTWORT'] ."',currentCount);
   currentCount++;";
 }
@@ -97,10 +102,5 @@ echo"</script>";
 ?>
        </section>
         </section>
-    <div class="popup tutorial" id="popup2">
-      <h1>Tutorial</h1>
-      <p>Löse die Gleichung richtig auf! Schiebe hierbei die Karten in das richtige Feld!</p>
-      <a href="#" onclick="read('popup2')">Verstanden!</a>
-    </div>
     <script src="./jss/dragndrop.js"></script> 
   </body>

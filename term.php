@@ -48,6 +48,11 @@
       <p>Du kannst keine weiteren Antworten in diese "Dropzone" packen!.</p>
       <a href="#" onclick="hide('popup1')">Ok!</a>
     </div>
+    <div class="popup" id="popup4">
+      <h1>Error</h1>
+      <p>Die Eingabe ist keine Zahl!</p>
+      <a href="#" onclick="read('popup4')">Ok!</a>
+    </div>
     <section class="game" id="game">
     <section class="BR-Math-TermZone" >
         <section class="term" id="termZone">
@@ -67,7 +72,7 @@
         </section>
     <div class="popup tutorial" id="popup2">
       <h1>Tutorial</h1>
-      <p>Löse die Gleichung richtig auf! Schiebe hierbei die Karten in das richtige Feld!</p>
+      <p>Löse die Gleichung richtig auf! Schreibe hierbei das Feld die richtige Lösung!</p>
       <a href="#" onclick="read('popup2')">Verstanden!</a>
     </div>
         <script src="./jss/term.js?<?php echo time(); ?>"></script> 
