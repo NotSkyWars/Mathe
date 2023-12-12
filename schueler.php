@@ -39,7 +39,7 @@
   if(ISSET($_SESSION['username']) && ISSET($_SESSION['password']) && ISSET($_SESSION['lehrer'])){
     // Schaue ob der Nutzer bereits eingeloggt ist
   }else{
-     header("Location: login.php");
+     header("Location: selection.php");
   }?>
     <main>
         <h1>Schüler hinzufügen</h1>
