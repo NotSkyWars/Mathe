@@ -57,7 +57,7 @@
     <section class="BR-Math-TermZone" >
         <section class="term" id="termZone">
        </section> 
-       <div class="submit"><input type="submit" value="Abgeben" id="submit-button" onclick="check()">  </div>
+       <div class="submit"><button type="submit" value="Abgeben" id="submit-button" onclick="check()"> Abgeben </div>
       </section>
         <?php 
         if(ISSET($_SESSION['login'])){
