@@ -42,7 +42,7 @@ const sleep = (milliseconds) => {
                  }
             }else{
                 if(element.getBoundingClientRect().right <= (window.innerWidth || document.documentElement.clientWidth)){
-                    element.style.left = 5*reset + "px"; 
+                    element.style.left = 3*reset + "px"; 
                     
                  }else{
                      if(correct === element){
