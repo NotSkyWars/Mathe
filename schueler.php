@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
+    <title>Mathespiel</title>
     <link rel="stylesheet" href="./css/schueler.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/navbar.css?<?php echo time(); ?>">
   </head>
@@ -34,7 +34,6 @@
     $db = new Database;
     $db->connect();
     $db->addUser($_POST['username'],$_POST['password'],$_POST['klasse'],$_POST['type']);
-    var_dump($_POST);
   }
   
   if(ISSET($_SESSION['username']) && ISSET($_SESSION['password']) && ISSET($_SESSION['lehrer'])){

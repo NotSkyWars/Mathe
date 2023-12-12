@@ -24,7 +24,6 @@ class Database{
     {
         $output = $this->con->prepare("SELECT UUID FROM Core.profile WHERE name=:uuid");
         $output->execute(['uuid' => $uuid]); 
-        $result = $output->fetch();
     }
 
     public function removeCard(string $uuid)
@@ -112,9 +111,11 @@ class Database{
                 $_SESSION['KLASSE'] = $this->get("KLASSE","NAME",$name);
                if($this->get("LEHRER","NAME",$name) == "Lehrer"){
                 $_SESSION['lehrer'] = true;
-               }
+               }else{
+                unset($_SESSION['lehrer']);
+                }
     
-               header("Location: selection.php");
+               header("Location: /selection.php");
             }else{
                 echo '    <div class="popup loginfehler" id="popup2" style="display:block;">
                 <h1>Loginfehler</h1>

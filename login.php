@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
+    <title>Mathespiel</title>
     <link rel="stylesheet" href="./css/login.css?<?php echo time(); ?>">
     <link rel="stylesheet" href="./css/popup.css?<?php echo time(); ?>">
     <script src="./jss/login.js?<?php echo time(); ?>"></script> 
@@ -28,10 +28,12 @@
       if(isset($_POST['signout'])){
         unset($_SESSION['username']);
         unset($_SESSION['password']);
+        if(isset($_SESSIOM['lehrer'])){
+          unset($_SESSION['lehrer']);
+        }
       }
       if(isset($_POST['username']) && isset($_POST['password'])){
         // Initialisiere die Datenbank und schaue, ob der Nutzer in der DB ist und ob der Name und das Passwort übereinstimmt
-        echo "sadads";
         $db = new Database;
         $db->connect();
         $db->validateUser($_POST['username'],$_POST['password']);

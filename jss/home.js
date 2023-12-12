@@ -3,7 +3,7 @@
 window.onload = function() {
     giveCredit();
     window.setTimeout(function(){
-        window.location.href = "login.php";
+        window.location.href = "/login.php";
     }, 10000);
   }
   const sleep = (milliseconds) => {

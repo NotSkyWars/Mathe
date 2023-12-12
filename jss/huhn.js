@@ -32,7 +32,7 @@ const sleep = (milliseconds) => {
             
             if((window.screen.availWidth || document.documentElement.clientWidth) <= 500){
                 if(element.getBoundingClientRect().bottom <= (window.innerHeight || document.documentElement.clientHeight)){
-                    element.style.top = 3*reset + "px"; 
+                    element.style.top = 2*reset + "px"; 
                     
                  }else{
                      if(correct === element){
