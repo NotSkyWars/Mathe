@@ -69,7 +69,7 @@
         <div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div><div class="BR-Math-DropZone" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
        
     </section>
-    <div class="submit"><input type="submit" value="Abgeben" id="submit-button" onclick="check()">  </div>
+    <div class="submit"><button type="submit" value="Abgeben" id="submit-button" onclick="check()"> Abgeben  </div>
       </section>
         <section class="BR-Math-PickZone" id="BR-Math-PickZone" ondrop="drop(event)" ondragover="allowDrop(event)"> 
       </section>
