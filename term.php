@@ -72,7 +72,7 @@
         </section>
     <div class="popup tutorial" id="popup2">
       <h1>Tutorial</h1>
-      <p>Löse die Gleichung richtig auf! Schreibe hierbei das Feld die richtige Lösung!</p>
+      <p>Löse die Gleichung richtig auf! Schreibe hierbei in das Feld die richtige Lösung!</p>
       <a href="#" onclick="read('popup2')">Verstanden!</a>
     </div>
         <script src="./jss/term.js?<?php echo time(); ?>"></script> 
