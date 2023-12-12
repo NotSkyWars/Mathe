@@ -62,7 +62,7 @@
         <?php 
         if(ISSET($_SESSION['login'])){
         }else{
-          header("login.php");
+           header("Location: login.php");
         }
 
         ?>
