@@ -1,7 +1,7 @@
 @import url('colors.css');
 
 
-main input[type=submit] {
+main input[type=submit], button[type=submit] {
     padding: 1vh 10% 1vh 10%;
     background-color: var(--highlight-green);
     border: .3vw solid none;
@@ -21,7 +21,7 @@ main input[type=submit] {
     font-family: 'Roboto';
 }
 
-main input[type=submit]:hover {
+main input[type=submit]:hover, button[type=submit]:hover {
 
     transform: scale(1.1);
 }
