@@ -44,7 +44,7 @@
     !--->
     <div class="popup tutorial" id="popup0">
       <h1>Tutorial</h1>
-      <p>In der Mitte des Bildschirmes steht eine Aufgabe. Klicke die richtige Lösung und erhöre deine Punktzahl!</p>
+     <p>Bilde eine Triade aus drei Karten! Schiebe hierzu die drei Karten in die jeweilige Dropzone</p>
       <a href="#" onclick="hide('popup0')">Verstanden!</a>
     </div>
     <div class="popup" id="popup1">
