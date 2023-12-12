@@ -48,7 +48,7 @@
     </section>
     <div class="popup" id="popup1">
       <h1>Verloren</h1>
-      <p>Du die richtige Antwort nicht gefunden!</p>
+      <p>Du hast die richtige Antwort nicht gefunden!</p>
       <a href="#" onclick="hide('popup1')">Okay!</a>
     </div>
 
