@@ -30,7 +30,7 @@
   <body>
     <main>
     <span class="br"></span>
-        <h1>Karte hinzufügen</h1>
+        <h1>Karte entfernen</h1>
         <form method="post">
        <div class="card-form"> 
         <textarea  class="question" name="question" id="question" type="text" placeholder="Frage" readonly></textarea>
@@ -72,7 +72,7 @@ console.log(antworten);
 
 </select>
       </div>
-      <div class="submit"><input name="hollow" type="submit" value="Hinzufügen"></div>
+      <div class="submit"><input name="hollow" type="submit" value="Entfernen"></div>
         
        </form>
 
