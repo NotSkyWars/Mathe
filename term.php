@@ -59,13 +59,6 @@
        </section> 
        <div class="submit"><button type="submit" value="Abgeben" id="submit-button" onclick="check()"> Abgeben </div>
       </section>
-        <?php 
-        if(ISSET($_SESSION['login'])){
-        }else{
-           header("Location: login.php");
-        }
-
-        ?>
 
 
 
