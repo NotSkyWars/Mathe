@@ -22,6 +22,7 @@ Beim Laden des Fensters das Tutorial Popup sichtbar machen und eine Rückmeldung
             selectedItem = null;
           }else if(selectedItem && selectedItem.parentNode   !== element){
             document.getElementById('popup1').style.display ='block';
+            selectedItem = null;
           }
         }else if(element.hasChildNodes){
             selectedItem = element.firstChild;
