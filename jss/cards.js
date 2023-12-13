@@ -24,6 +24,7 @@ window.addEventListener("load", (event) => {
             selectedItem = null;
           }else if(selectedItem && selectedItem.parentNode   !== element){
             document.getElementById('popup1').style.display ='block';
+             selectedItem = null;
           }
         }else if(element.hasChildNodes){
             selectedItem = element.firstChild;
