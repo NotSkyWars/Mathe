@@ -38,13 +38,6 @@
   <body>
     <main>
       <span class="br"></span>
-      <?php 
-        if(ISSET($_SESSION['login'])){
-        }else{
-          header("login.php");
-        }
-
-        ?>
       <section class="BR-Math-Title">
         <h1>Cards</h1>
       </section>
